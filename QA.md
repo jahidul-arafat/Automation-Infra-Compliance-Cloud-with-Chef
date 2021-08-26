@@ -29,3 +29,18 @@
 - [ ] It's a hub for communicating with infrastruture nodes.
 - [ ] It's a YML file that is used to bootstrap infrastructure nodes.
 - [x] It's like a set of configuration files, called recipes, that configures your infrastructure.
+
+### Q7. Which of the following best describes Chef resources?
+- [ ] the file in which Chef code is stored.
+- [x] the ingredients used to determine how Chef configures an instance.
+- [ ] the documents, manual pages, and contact info for Chef engineers.
+
+### Q8. True or false: Chef recipes support both YAML and Ruby formats.
+- [x] True.
+- [ ] False.
+
+### Q9. Chef resources are stored in files called:
+- [ ] cookbooks.
+- [x] recipes.
+- [ ] ingredients.
+- [ ] READMEs.

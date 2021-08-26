@@ -3,4 +3,5 @@
 # Recipe:: default
 #
 # Copyright:: 2020, The Authors, All Rights Reserved.
-include_recipe "learn_chef::learn-chef"
+include_recipe "learn_chef::motd"
+include_recipe "learn_chef::web"

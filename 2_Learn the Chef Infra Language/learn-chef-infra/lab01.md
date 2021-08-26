@@ -16,7 +16,7 @@
 
 
 ## PART-01: Environment setup and generating cookbook
-### 1.1: Install Chef and check the chef version
+### 1.1 Install Chef and check the chef version
 ```bash
 # Install Chef
 > curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
@@ -32,7 +32,7 @@ Test Kitchen version: 3.0.0
 Cookstyle version: 7.15.4
 ```
 
-### 1.2: Generate a cookbook named 'learn_chef'  and check its structure
+### 1.2 Generate a cookbook named 'learn_chef'  and check its structure
 ```bash
 # Generate the cookbook named 'learn_chef'
 > chef generate cookbook learn_chef
@@ -56,7 +56,7 @@ learn_chef/
 
 ```
 
-### 1.3: Understand the kitchen.yml
+### 1.3 Understand the kitchen.yml
 ```bash
 # Test Kitcehn was built to use several different flexible settings
 # This kitchen.yml is a combinaiton of several key-value pairs
@@ -88,7 +88,7 @@ suites:             # The policies and code which will be enforces on the test i
     attributes:
 ```
 
-### 1.4: Check the kitchen list to see whether the target instances are provisioned or not
+### 1.4 Check the kitchen list to see whether the target instances are provisioned or not
 ```bash
 # Check the kitchen list
 # Mote: See the Target OS is yet to provision with last action _<Not Created>_
@@ -99,7 +99,7 @@ default-ubuntu-2004  Vagrant  ChefInfra    Inspec    Ssh        <Not Created>  <
 default-centos-8     Vagrant  ChefInfra    Inspec    Ssh        <Not Created>  <None>
 ```
 
-### 1.5: Create Test Instances using _kitchen create_ command and check the kitchen list after creattion
+### 1.5 Create Test Instances using _kitchen create_ command and check the kitchen list after creattion
 ```bash
 # Create the Target/test instances (2x: Ubuntu + Centos)
 > kitchen create
@@ -126,7 +126,7 @@ default-centos-8     Vagrant  ChefInfra    Inspec    Ssh        Created      <No
 
 ## PART 02: Writing infra code and deploying the changes
 ### 2.1 Create a /etc/motd file with content "Learning Chef is fun with YAML!" for both Test Instances and verify at login 
-#### 2.1.1: Create a ~/etc/motd file in both the Target/Test instances
+#### 2.1.1 Create a ~/etc/motd file in both the Target/Test instances
 > **Note:**
 > - Infra resource will be used: **file**
 > - file need to be created : /etc/motd
@@ -151,7 +151,7 @@ resources:
 include_recipe "learn_chef::motd"  # include_recipe "<cookbook_name::recipe_name>"
 ```
 
-#### 2.1.2: Deploy the changes in Test Instances using **kitchen converge**
+#### 2.1.2 Deploy the changes in Test Instances using **kitchen converge**
 ```bash
 # Deploy the changes in Test Instances
 > kitchen converge
@@ -180,7 +180,7 @@ Last login: Thu Aug 26 10:46:33 2021 from 10.0.2.2
 ```
 
 ### 2.2: Configure a Apache2 Web Server Only for TestInstance::Ubuntu
-#### 2.2.1: Create a new recipe named recipe/web.yml
+#### 2.2.1 Create a new recipe named recipe/web.yml
 ```bash
 # Create a new recipe named recipe/web.yml
 # This recipe will use 3x resources: 

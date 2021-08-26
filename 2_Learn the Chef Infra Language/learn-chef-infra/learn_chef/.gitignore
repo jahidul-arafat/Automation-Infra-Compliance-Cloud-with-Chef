@@ -13,7 +13,8 @@ bin/*
 .bundle/*
 
 # test kitchen
-.kitchen/*
+.kitchen/
+.kitchen/logs
 kitchen.local.yml
 
 # Chef Infra

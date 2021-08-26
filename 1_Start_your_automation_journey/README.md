@@ -36,9 +36,14 @@
 > - By creating **artifacts** that can be deployed on-demand to bare-metal, VMs or containers without rewriting or refactoring of the underlying application code
 > - thereby enabling the adoption of **agile** delivery practices across development and operations teams
 
-## Chef App Delivery = Chef Habitat (Create artifact + agile delivery) + Chef Infra (to deploy immutable insfrasturcture) + Chef Automate (to gain application cluster visibility)
+> ### Chef App Delivery = Chef Habitat (Create artifact + agile delivery) + Chef Infra (to deploy immutable insfrasturcture) + Chef Automate (to gain application cluster visibility)
 
+> ### Chef Compliance = Chef InSpec (For Auditing using CIS and STIG benchmarks) + Chef Habitat (for building Compliance Package, For Remediation on a control-by-control basis) + Chef Automate (For Monitoring & Reporting) 
 
+### Chef Enterprise Automation Stack
+![img.png](images/chef_eas.png)
+
+** _[See Chef Enterprise Automation Stack](https://youtu.be/IBlNQR2nlEY)_
 
 
 ## 3.0 Environment Setup
@@ -85,12 +90,27 @@ Cookstyle version: 7.15.4
 
 > ![img.png](images/img.png)
 
-#### B. Example 01: Webserver install,enable,start
-> Install an Apache Web Server package (httpd)
-
-> Create a file on that node called **/var/www/html/index.html**
-
-> enable and start the Apache web server
+#### B. What a Chef Cookbook looks like
+```bash
+├── cookbooks  # (set of configuration files)
+│   ├── myapp
+│   │   ├── attributes                # <-- Note
+│   │   │   └── default.rb            # <-- Note
+│   │   ├── CHANGELOG.md
+│   │   ├── chefignore
+│   │   ├── .kitchen.yml              # <-- Most Important      
+│   │   ├── LICENSE
+│   │   ├── metadata.rb               # <-- Note
+│   │   ├── Policyfile.rb             # <-- Note
+│   │   ├── README.md
+│   │   ├── recipes                   # <-- Note
+│   │   │   └── default.rb            # <-- Note
+```
+#### C. Example 01: Webserver install, enable and start
+> Create a recipe **cookbooks/hardening/recipe/remediation.rb** which will install the httpd package if it is not installed earlier.
+> - Install an Apache Web Server package (httpd)
+> - Create a file on that node called **/var/www/html/index.html**
+> - enable and start the Apache web server
 ```ruby
 # install the apache package named 'httpd'
 package 'httpd'
@@ -107,9 +127,27 @@ end
 ```
 
 ### 4.2 Chef InSpec
+#### What a Chef InSpec looks like ?
+```bash
+aws-security/                 # The InSpec Profile, Create a skeleton profile: inspec init profile <name>
+├── controls                  # Write all your controls here
+│   └── example.rb            # <-- Note
+├── files
+│   └── terraform.json        # <-- Note
+├── inputs.yml
+├── inspec.lock
+├── inspec.yml                # <-- Note
+└── README.md
+
+
+
+```
+
+
 #### A. Scenario 01: Test a node for security Compliance
-> In this example, **Inspect** is testing the node to ensure the **ssh_config**
-> protocol should be 2. If the actual value frm the node is _not_ protocol 2, a **critical** issue is reported and can be displayed in the **Chef Automate** UI as shown below.
+> In this example, **Inspect** is testing the node 
+> - to ensure the **ssh_config** protocol should be 2. 
+> - If the actual value frm the node is _not_ protocol 2, a **critical** issue is reported and can be displayed in the **Chef Automate** UI as shown below.
 
 ![img.png](images/chef_atuomate_1.png)
 
@@ -125,7 +163,7 @@ control 'ssh-04' do                             # unique control name
 end
 ```
 
-#### B. Scenario 02: 
+#### B. Scenario 02
 > In this example **InSpec** will check to see if the /tmp directory is owned by the root user. 
 > If the the _/tmp_ directory is out of policy, the output from deploying the profile will produce an error, 
 > which can be visualized and monitored using the dashboard and visibility tool Chef Automate.
@@ -250,3 +288,4 @@ cp {{pkg.path}}/hello-world  {{pkg.svc_data_path}}/cgi-bin/
 
 chmod 755 {{pkg.svc_data_path}}/cgi-bin/hello-world
 ```
+

@@ -140,7 +140,7 @@ default-centos-8     Vagrant  ChefInfra    Inspec    Ssh        Created      <No
 > vim recipe/motd.yml
 ---
 resources:
-  - type: "file"
+  - type: "file"                # resource 01: To create the file
     name: "/etc/motd"
     content: "Learning Chef is fun with YAML!"
     

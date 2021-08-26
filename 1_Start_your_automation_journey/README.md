@@ -8,10 +8,9 @@
 
 ## 2.0 About Chef
 | Feature | Remarks |
-| :--- | :--- | 
-| Chef Infra | First Product, 2008 --> is a set of tools to automate the configuration of cloud-based and on-prem server infrastructure |
+| :--- | :--- |
 |Chef| Chef can automate you build, deploy and manage your infrastructure|
-|Chef INFRA| Infrastructure automation to provision, harden and maintain configuration state.|
+|Chef INFRA| First Product, 2008. Infrastructure automation to provision, harden and maintain configuration state.|
 |Chef INSPEC| Security and Compliance automation in any environment, on any platform|
 |Chef HABITAT| Automation capabilities for defining, packaging and delivering applications.|
 |Chef COMPLIANCE| Compliance with Speed and Efficiency|

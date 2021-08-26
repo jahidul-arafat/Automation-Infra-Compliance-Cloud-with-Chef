@@ -76,4 +76,147 @@ service 'httpd' do
 end
 ```
 
+### 4.2 Chef InSpec
+#### A. Scenario 01: Test a node for security Compliance
+> In this example, **Inspect** is testing the node to ensure the **ssh_config**
+> protocol should be 2. If the actual value frm the node is _not_ protocol 2, a **critical** issue is reported and can be displayed in the **Chef Automate** UI as shown below.
 
+![img.png](images/chef_atuomate_1.png)
+
+```ruby
+# Source Code
+control 'ssh-04' do                             # unique control name
+  impact 1.0                                    # Impact : {0.0 to 1.0}, 1.0 --> critical, anything above 0.7+ is reported in Chef Automate UI
+  title 'Cleint: Specify protocol version 2'    # Give it a title
+  desc "Only SSH protocol  v2 conn is permitted, V1 not permitted" # additional description
+  describe ssh_config do                        # describe <InSpec Resource Name>
+    its('Protocol'){should eq('2')}             # its{<resource_feature>}, used to validate of one your resource feature
+  end                                             # eq --> is a matcher, like cmp
+end
+```
+
+#### B. Scenario 02: 
+> In this example **InSpec** will check to see if the /tmp directory is owned by the root user. 
+> If the the _/tmp_ directory is out of policy, the output from deploying the profile will produce an error, 
+> which can be visualized and monitored using the dashboard and visibility tool Chef Automate.
+
+```ruby
+# Source Code
+control 'tmp-1.1' do
+  impact 0.3
+  title '/tmp directory is owned by the root user'
+  desc 'The /tmp directory is owned by the root used'
+  describe file('/tmp') do
+    it {should be_owned_by 'root'}
+  end
+end
+```
+
+### 4.3 Chef Habitat
+#### A. Scenario 01:
+Under the /root/sample-habitat, create a 2X habitat plan (one is default and other named imagemagick ). Then check the structure of these habitate file.
+
+> **Note**: Under any habitate file **plan.sh**. The purpose of **Chef Habitat** to reduce the misunderstanding between developers and operators about how an app is built or deployed with a single-source-of-truth.
+> This patterns makes combining Habitat with other automation tools like **Chef Infra** and **InSpec**.
+
+#### Source Code
+```bash
+# Source Code
+> cd /tmp
+> mkdir sample-habitat
+> cd sample-habitat
+
+# Create the default Habitat Plan
+> hab plan init       # this will create a plan named habitat
+
+# Create the next Habitat Plan named 'imagemagick'
+> hab plan init imagemagick
+
+# Check the structure of these habitat plans
+> tree
+.
+├── habitat
+│   ├── config        # (a directory, may contains the config files i.e. httpd.conf)
+│   ├── default.toml  # (a file, contains the config file variable infos)
+│   ├── hooks         # (a directory, contains init.sh as bash automation script run at target)
+│   ├── plan.sh       # (this is the main file, which contains all dependencies and others)
+│   └── README.md
+└── imagemagick
+    ├── config
+    ├── default.toml
+    ├── hooks
+    ├── plan.sh
+    └── README.md
+    
+# Now Enter into the Hab studio and try yo run the 'build'
+> hab studio enter
+  > [1][default:/src:0]# build # this will create a artifact files with .HART externsion under /src/results directory
+  
+  : Loading /src/plan.sh  # See, its loading the plan.sh file and building from it
+   sample-habitat: Plan loaded
+   sample-habitat: Validating plan metadata
+  
+
+```
+#### Glimps of plan.sh file
+```bash
+# Have a glimps of habitat/plan.sh file
+> head -n 10 habitat/plan.sh
+pkg_name=meme-machine
+pkg_origin=learnchef_tryhabitat
+pkg_version="0.2.0"
+pkg_scaffolding="core/scaffolding-ruby"
+pkg_deps=(
+  learnchef_tryhabitat/imagemagick
+)
+  
+# Have a glimps of habitat/config/httpd.conf file
+# Skipped with bravity
+```
+
+#### Glimps of default.toml 
+```bash
+# Glimps of habitat/default.toml file
+> cat habitat/default.toml
+#httpd.conf settings
+serveradmin = "you@example.com"
+servername = "localhost"
+serverport = "80"
+listen = ["80"]
+user = "hab"
+group = "hab"
+default_modules = [	"access_compat", "alias", "auth_basic", "authn_file", "authn_core", "authz_host",
+                    "authz_groupfile", "authz_user", "autoindex", "cgid", "dir", "env", "filter",
+                    "headers", "log_config", "mime", "reqtimeout", "rewrite", "setenvif", "ssl", "status", "version" ]
+
+#httpd-default settings
+timeout = 60
+keepalive = "On"
+keepaliverequests = 100
+keepalivetimeout = 5
+serversignature = "Off"
+servertokens = "Full"
+accessfilename = ".htaccess"
+canonicalname = "Off"
+hostnamelookups = "Off"
+...
+```
+
+#### Glimps of hooks/init file
+```bash
+# Have a glimps of habitat/hooks/init file
+> cat habitat/hooks/init
+#!/bin/bash
+
+addgroup {{cfg.group}}
+adduser --disabled-password --ingroup {{cfg.user}} {{cfg.group}}
+
+chmod 755 {{pkg.svc_data_path}}
+
+mkdir -p {{pkg.svc_data_path}}/htdocs
+
+mkdir -p {{pkg.svc_data_path}}/cgi-bin
+cp {{pkg.path}}/hello-world  {{pkg.svc_data_path}}/cgi-bin/
+
+chmod 755 {{pkg.svc_data_path}}/cgi-bin/hello-world
+```

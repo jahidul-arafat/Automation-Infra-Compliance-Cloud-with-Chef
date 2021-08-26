@@ -17,6 +17,30 @@
 |Chef COMPLIANCE| Compliance with Speed and Efficiency|
 |Chef AUTOMATE| Provides operational visibility and organizational collaboration for everything you automate|
 
+### What You Can Gain with With Chef Infra ?
+> - Automate configuration management process
+> - Applies updates dynamically, making conditional changes based on running environment or hardware
+> - Ensure code portability among the development and production environment 
+> - Make infrastructure configurations testable, portable and auditable
+
+
+### What You Can Gain with With Chef Automate ? 
+> - **Real-Time Data insights**: Configuration and compliance details are collected for every datacenter, cloud provider and environment managed by Chef Infra and the data is presented in aggregated dashboards that can be filtered
+> - **Effortless collaboration** among Dev, Op, Security and Compliance teams 
+> - Powerful Auditing Capabilities with **agent-less compliance scans** directly in the Web UI.
+> - Intelligent Access Control using **LDAP/SAMP** to ensure the _right team having the right access_
+> - Built-In Compliance Assets such as **CIS Benchmarks** (_Center for Internet Security_) and **DISA STIGs** (_Defense Information Systems Agency_, _Security Technical Implementation Guide_)
+
+### What Chef Habitat Enables ?
+> Chef Habitat enables DevOps and application teams to build continuous delivery pipelines across all applications and all change events.
+> - By creating **artifacts** that can be deployed on-demand to bare-metal, VMs or containers without rewriting or refactoring of the underlying application code
+> - thereby enabling the adoption of **agile** delivery practices across development and operations teams
+
+## Chef App Delivery = Chef Habitat (Create artifact + agile delivery) + Chef Infra (to deploy immutable insfrasturcture) + Chef Automate (to gain application cluster visibility)
+
+
+
+
 ## 3.0 Environment Setup
 ### Step 3.1: Packages in Chef Workstation
 Chef Workstation includes:
@@ -28,12 +52,18 @@ Chef Workstation includes:
 
 ### Step 3.2: Install Chef Workstation Package
 ```bash
-# Download Chef-workstation and install
-# This will be installed in /opt/chef-workstation/ directory
+# Step-01: Install **Ruby**, I am doing this in my Ubuntu 18.04 environment
+> sudo apt install ruby-full
+> ruby --version 
+ruby 2.5.8p224 (2020-03-31 revision 67882) [x86_64-linux-gnu]
 
+# Step-02: Install **RubyMine** as IDE from Intellij
+
+# Step-03: Download Chef-workstation and install
+# This will be installed in /opt/chef-workstation/ directory
 > curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec
 
-# Check the chef version installed
+# Check the **chef** version installed
 > chef --version
 Chef Workstation version: 21.8.555
 Chef Infra Client version: 17.3.48   # This is the chef version

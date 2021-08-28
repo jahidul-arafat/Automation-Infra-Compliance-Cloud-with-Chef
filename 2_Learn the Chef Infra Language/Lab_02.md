@@ -1,4 +1,4 @@
-# Lab 01: Learn Chef Infra
+# Lab 02: Learn Chef Infra
 ## Experiment Name:
 #### Prepare a cookbook to deploy two Test instances ( 1X Ubutnu 18.04 and 1X Centos-8) using Kitchen.yml and converging the changes into these in a agile process.
 

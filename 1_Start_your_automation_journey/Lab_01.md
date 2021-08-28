@@ -1,4 +1,5 @@
-# Start Your Automation Journey
+
+# Lab 01: Start Your Automation Journey
 
 ## 1.0 Key Objectives
 - Define IT Automation

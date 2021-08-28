@@ -1,5 +1,5 @@
 # Lab 01: Learn Chef Infra
-### Prepare a cookbook to deploy two Test instances ( 1X Ubutnu 18.04 and 1X Centos-8) using and converging the changes into these in a agile process.
+### Prepare a cookbook to deploy two Test instances ( 1X Ubutnu 18.04 and 1X Centos-8) using Kitchen.yml and converging the changes into these in a agile process.
 
 > #### Key Commands we will use
 > - **chef generate cookbook <CookBook_Name>**: To generate a cookbook
@@ -12,7 +12,7 @@
 > - **kitchen destroy <TestInstance_Name>**: to destroy only to a specific TestInstance created earlier
 
 > #### Chef Infra Structure at a glance
-> ![](../images/chef_infra-_structure.png)
+![](images/chef_infra-_structure.png)
 
 
 ## PART-01: Environment setup and generating cookbook
@@ -37,7 +37,7 @@ Cookstyle version: 7.15.4
 # Generate the cookbook named 'learn_chef'
 > chef generate cookbook learn_chef
 
-#Check the cookbook structure
+# Check the cookbook structure
 > tree learn_chef
 learn_chef/
 ├── CHANGELOG.md
@@ -204,7 +204,7 @@ resources:
       - enable
       - start
 
-# Add the new;y created recipe/web.yml into recipe/default.rb
+# Add the newly created recipe/web.yml into recipe/default.rb
 > vim recipe/default.rb
 ---
 include_recipe "learn_chef::web"

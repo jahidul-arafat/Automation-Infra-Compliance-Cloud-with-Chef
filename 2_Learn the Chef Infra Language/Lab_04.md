@@ -1,5 +1,4 @@
-# Lab 04
-## Experiment Name: Demonstrating a Hardening Cookbook 
+# Lab 04: Demonstrating a Hardening Cookbook 
 ## Learning Objective:
 - To run the hardening cookbook to ensure our machine remain compliant
 - To create a wrapper cookbook named 'base' with a default policyfile into it

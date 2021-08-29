@@ -1,5 +1,4 @@
-# Lab 05
-## Experiment Name: Create knife profiles and make sure the knife profile can switch between multiple Chef-Infra-Server from host machine
+# Lab 05: Create knife profiles and make sure the knife profile can switch between multiple Chef-Infra-Server from host machine
 ### Learning Objective:
 - To learn about **knife profiles** :: is the ability to quickly and easily switch from one Chef Infra to another
 - To configure **knife profiles** by adding them to **~/.chef/credentials** file @host (_TOML formatted_)

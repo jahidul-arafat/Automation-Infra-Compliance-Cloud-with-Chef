@@ -1,5 +1,4 @@
-# Lab 03
-## Experiment Name: Create a basic Chef repo and try to understand its architecture
+# Lab 03: Create a basic Chef repo and try to understand its architecture
 
 
 ### Objective:

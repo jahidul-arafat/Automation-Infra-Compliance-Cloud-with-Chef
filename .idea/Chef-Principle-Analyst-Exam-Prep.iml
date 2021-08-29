@@ -9,6 +9,10 @@
       <sourceFolder url="file://$MODULE_DIR$/features" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/2_Learn the Chef Infra Language/learnchef-hardening-repo/cookbooks/base" type="cookbooks-root" />
+      <sourceFolder url="file://$MODULE_DIR$/2_Learn the Chef Infra Language/learnchef-hardening-repo/cookbooks/hardening" type="cookbooks-root" />
+      <sourceFolder url="file://$MODULE_DIR$/2_Learn the Chef Infra Language/learnchef-hardening-repo/cookbooks/patching" type="cookbooks-root" />
+      <sourceFolder url="file://$MODULE_DIR$/2_Learn the Chef Infra Language/learnchef-repo/cookbooks/example" type="cookbooks-root" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

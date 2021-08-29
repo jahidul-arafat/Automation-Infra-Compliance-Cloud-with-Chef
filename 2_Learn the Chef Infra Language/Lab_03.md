@@ -1,5 +1,5 @@
 # Lab 03
-## Experiment Name:
+## Experiment Name: Create a basic Chef repo and try to understand its architecture
 
 
 ### Objective:
@@ -125,20 +125,37 @@ learnchef-repo/
 > chef generate --help
 ---
 Available generators:
-  cookbook        Generate a single cookbook    # chef generate cookbook <cookBookName>
+  cookbook        Generate a single cookbook    # chef generate cookbook <cookBookName>, chef generate cookbook <cookbookName> -P // here -P means generate with a default policyfile.rb
   recipe          Generate a new recipe         # chef generate cookbook/recipe <recipeName>
-  attribute       Generate an attributes file   # chef generate cookbook/attribute <attributeName>
+  attribute       Generate an attributes file   # chef generate attribute cookbookName <attributeFileName>
   template        Generate a file template      # chef generate cookbook/template <templateName>
   file            Generate a cookbook file      # chef generate cookbook/file <fileName>
   resource        Generate a custom resource    
   repo            Generate a Chef Infra code 
                   repository                    # chef generate repo <repoName>
-  policyfile      Generate a Policyfile for 
+  policyfile      Generate a Policyfile for     # Example: chef install cookbooks/base/Policyfile.rb
                   use with the install/push 
                   commands                      #
   generator       Copy Chef Workstation's generator cookbook so you can customize it
 
 ```
 
+### Step 02: Deep Drive into a Policy file
+```bash
+> vim cookbookName/Policyfile.rb
+---
+# Policyfile.rb - Describe how you want Chef Infra Client to build your system.
+# A name that describes what the system you're building with Chef does.
+name 'learn_chef'                 # the name of the cookBook
+
+# Where to find external cookbooks:
+default_source :supermarket       # the default source to find the external cookbooks are from "supermarket"
+
+# run_list: chef-client will run these recipes in the order specified.
+run_list 'cookbookName::default'  # the default recipe which the chef-client will run in the Target Node
+
+# Specify a custom source for a single cookbook:
+cookbook 'cookbookName', path: '.'  # Path of the cookbook
+```
 
 

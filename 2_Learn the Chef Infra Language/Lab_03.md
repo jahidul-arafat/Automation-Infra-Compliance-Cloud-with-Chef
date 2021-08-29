@@ -21,69 +21,6 @@
 > - **policyfiles** = is a collection of different policies. This is used to keep your overreaching policies in place.
 > ![](images/chef_repo_structure.png)
 
-> ### A glimps of knife
-> With knife, you can create distinct profiles that allow you to quickly and easily switch from interacting with one Infra Server to another Infra Server 
->
-> #### knife helps you manage and maintain:
-> - Nodes
-> - Cookbooks and recipes
-> - The enforcement of Policies
-> - Resources within various cloud environments
-> - The installation of Chef Infra Client onto nodes
-> - Searching of indexed data about your infrastructure
-> 
-> *** _To see knife in action: you need a Chef Infra Server for knife to interact with._
-
-> **Some useful knife commands**
-> 
-> **A**. **knife bootstrap**
-> - allows you to iniitiate a process that installs Chef Infra Client on the target system and
-> - configures the Infra Client to be able to communicate with Infra Server.
-> - It registers the target system as **node** on the Infra Server, 
-> - thus allowing the Infra Server to manage which and when policies are enforced, and thus automating your infrastructure management
-```bash
-# Some useful knife bootstrap commands
-** BOOTSTRAP COMMANDS **
-knife bootstrap [PROTOCOL://][USER@]FQDN (options)
-knife bootstrap azurerm SERVER (options)
-Usage: /usr/bin/knife (options)
-knife bootstrap windows ssh FQDN (options) DEPRECATED
-knife bootstrap windows winrm FQDN (options) DEPRECATED
-```
-
-> **B**: **knife node**
-> - knife bootstrap command registers the target system as a node on the Infra Server.
-> - Once the target system is registered, the knife node command allow you to update the policies on any one or more of your managed nodes.
-```bash
-# Some useful knife node commands
-** NODE COMMANDS **
-knife node bulk delete REGEX (options)
-knife node create NODE (options)
-knife node delete [NODE [NODE]] (options)
-knife node edit NODE (options)
-knife node environment set NODE ENVIRONMENT
-knife node from file FILE (options)
-knife node list (options)
-knife node policy set NODE POLICY_GROUP POLICY_NAME (options)
-knife node run_list add [NODE] [ENTRY [ENTRY]] (options)
-knife node run_list remove [NODE] [ENTRY [ENTRY]] (options)
-knife node run_list set NODE ENTRIES (options)
-knife node show NODE (options)
-```
-
-> **C**: **knife ssh**
-> - With all the Target systems are registered as node on the Infra Server, now you need to push
-> - the policies (create/updates) into the nodes.
-> - For that you need to connect the nodes remotely using knife ssh command. 
-```bash
-# Some useful knife ssh commands
-** SSH COMMANDS **
-knife ssh QUERY COMMAND (options)
-
-```
-
-
-
 ### Step 01: Create a chef repo and understand the available commands in **chef generate**
 #### 1.1 Create a Chef Repository named 'learnchef-repo' to store all our chef code
 ```bash

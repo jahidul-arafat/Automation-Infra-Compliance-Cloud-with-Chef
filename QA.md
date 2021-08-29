@@ -43,4 +43,14 @@
 - [ ] cookbooks.
 - [x] recipes.
 - [ ] ingredients.
-- [ ] READMEs.
+- [ ] README.
+
+### Q10. What Chef Infra command would you use to lock your policies in place by creating a Policyfile.lock.json file?
+- [ ] chef push Policyfile.rb
+- [x] chef install Policyfile.rb
+- [ ] chef init Policyfile.rb
+
+### Q11. Where do you define the source of dependent cookbooks?
+- [x] Policyfile.rb
+- [ ] metadata.rb
+- [ ] Policyfile.lock.json

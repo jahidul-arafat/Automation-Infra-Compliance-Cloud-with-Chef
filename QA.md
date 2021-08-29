@@ -54,3 +54,23 @@
 - [x] Policyfile.rb
 - [ ] metadata.rb
 - [ ] Policyfile.lock.json
+
+### Q12. What is a benefit of using knife profiles?
+- [ ] knife profiles use less CPU resources than other methods.
+- [ ] You don't need any additional files.
+- [x] You can quickly switch from one Chef Infra Server to another.
+
+### Q13. Which items comprise the heart of knife profiles?
+- [ ] a config.rb and knife.rb
+- [x] a credentials file and the "knife config" command.
+- [ ] a credentials file and the "chef config set" command.
+
+### Q14. Which command allows you to see all your knife profiles?
+- [x] knife config list-profiles
+- [ ] knife list-profiles
+- [ ] chef config list-profiles
+
+### Q15. Which command should you use to set a specific knife profile as default?
+- [ ] knife set-profile knifeProfileName
+- [ ] chef config use-profile knifeProfileName
+- [x] knife config use-profile knifeProfileName

@@ -2,15 +2,16 @@
 ## Experiment Name: Create knife profiles and make sure the knife profile can switch between multiple Chef-Infra-Server from host machine
 ### Learning Objective:
 - To learn about **knife profiles** :: is the ability to quickly and easily switch from one Chef Infra to another
-- To configure **knife profiles** by adding them to **~/.chef/credentials** file @workstation (_TOML formatted_)
+- To configure **knife profiles** by adding them to **~/.chef/credentials** file @host (_TOML formatted_)
 - To fetch the self signed certificate from Chef Infra Server to Host (My Machine)
-- To make sure that knife at Host (My Machine) can coomunicate with Chef Infa Server (vagrant VM::Ubuntu16.04)
+- To make sure that knife at Host (My Machine) can communicate with Chef-Infa-Server (vagrant VM::Ubuntu16.04)
+
 
 > ### Notes:
 > - Chef Infra Server: Vagrant VM::Ubuntu 16.04
 > - Chef Infra Server SSH port: 22
 > - Host to Chef Infra Sever SSH Tunneling: 2222 ==> 22
-- 
+
 > ### A glimps of knife
 > With knife, you can create distinct profiles that allow you to quickly and easily switch from interacting with one Infra Server to another Infra Server
 >
@@ -85,7 +86,7 @@ Chef Habitat version: 1.6.351
 Test Kitchen version: 3.0.0
 Cookstyle version: 7.15.4
 
-# 1.2 create a new directory named knife-repo where we will download a preconfigured Vagrant file
+# 1.2 create a new directory named knife-repo where we will create a Vagrant file
 > mkdir knife-repo
 > cd knife-repo
 
@@ -255,7 +256,7 @@ client_name = "user1"
 client_key = "~/.chef/user1.pem"
 chef_server_url = "https://learn-chef.differenturl/organizations/chef_foundations"
 
-# 5.3 List all knife profiles available
+# 5.2 List all knife profiles available
 > knife config list-profiles
 ---
  Profile                     Client  Key                Server                                                              
@@ -264,15 +265,15 @@ chef_server_url = "https://learn-chef.differenturl/organizations/chef_foundation
  east-region                 user1   ~/.chef/user1.pem  https://learn-chef.differenturl/organizations/differentorganization 
  west-region                 user1   ~/.chef/user1.pem  https://learn-chef.differenturl/organizations/chef_foundations 
 
-# 5.2 Now change your default profile to west-region
+# 5.3 Now change your default profile to west-region
 > knife config use-profile west-region
 ```
 
-### Step 6.0 Cleanign up
+### Step 6.0 Cleaning up
 ```bash
 # 6.1 Destroy the vagrant
 > cd knife-repo
-> vagrant destroy --force   # vagrant suspend, vagrant resume
+> vagrant destroy --force   # Other available vagrant commands:: vagrant suspend, vagrant resume
 
 # 6.2 Remove the ip/host mapping from /etc/hosts
 > sudo sed -i '' '192.168.33.199 learn-chef.automate/d' /etc/hosts

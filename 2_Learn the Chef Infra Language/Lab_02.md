@@ -240,8 +240,7 @@ vagrant@default-ubuntu-2004:~$ curl localhost
 ---
 Sample Ubuntu Web Server deployed using Chef Infra::Kitchen
 ```
-## Mission accomplished! You've not only configured an Apache web server
-> ### Lesson Learned:
+## Mission accomplished! You've not only configured an Apache web server, but also have learnt the followings:
 > - You learned what Chef resources are!
 > - You learned what Chef recipes are!
 > - You learned how to use Chef recipes and resources to configure a server from scratch!

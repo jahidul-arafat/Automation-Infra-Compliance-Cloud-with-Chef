@@ -74,3 +74,28 @@
 - [ ] knife set-profile knifeProfileName
 - [ ] chef config use-profile knifeProfileName
 - [x] knife config use-profile knifeProfileName
+
+### Q16. What important organizational feature does the Plan rely on to determine the system's runlist?
+- [ ] Recipes.
+- [ ] Resources.
+- [x] Policyfiles.
+
+### Q17. Which file declares how often this package should run on a system?
+- [ ] metadata.rb
+- [x] habitat/default.toml
+- [ ] policyfile.rb
+
+### Q18. What is a Resource?
+- [ ] Read-only data identified by a type and a name.
+- [x] A description of some piece of a system and its desired state.
+- [ ] An ordered series of configuration states.
+
+### Q19. What is a Recipe?
+- [x] A file that groups related resources.
+- [ ] A file that configures the chef-client run.
+- [ ] A File that configures your workstation.
+
+### Q20. What happens when you don't specify a resource's action?
+- [ ] You get an error message but the chef-client run continues.
+- [ ] You get an error message and the chef-client run halts.
+- [x] The default action is assumed.

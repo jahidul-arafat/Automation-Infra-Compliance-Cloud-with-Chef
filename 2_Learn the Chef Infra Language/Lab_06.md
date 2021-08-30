@@ -1,5 +1,5 @@
 # Lab 06: Using Chef Habitat to build artifacts, load that into a chef infra and Testing the Chef Infra against a Chef Inspec defined
-Learning Objective:
+### Learning Objective:
 - To apply a Chef cookbook to patch and harden a number of compliance related issues on a CentOS node.
 - To create a Habitat Package consisting of the chef-client along with the required cookbooks.
 - To use Chef Policyfiles to determine the Chef Infra environment and habitat to deploy the Chef Infra Client & cookbooks

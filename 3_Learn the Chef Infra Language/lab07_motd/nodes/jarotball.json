@@ -23,7 +23,7 @@
       },
       "waiver_file": null,
       "json_file": {
-        "location": "/home/jarotball/.chef/compliance_reports/compliance-20210830100645.json"
+        "location": "/var/chef/compliance_reports/compliance-20210830103458.json"
       },
       "run_time_limit": 1.0,
       "result_message_limit": 10000,
@@ -709,9 +709,9 @@
     },
     "memory": {
       "swap": {
-        "cached": "52kB",
+        "cached": "184kB",
         "total": "2097148kB",
-        "free": "2095356kB"
+        "free": "2095100kB"
       },
       "hugepages": {
         "total": "0",
@@ -720,31 +720,31 @@
         "surplus": "0"
       },
       "directmap": {
-        "4k": "779708kB",
-        "2M": "15681536kB",
+        "4k": "955836kB",
+        "2M": "15505408kB",
         "1G": "2097152kB"
       },
       "total": "16082888kB",
-      "free": "450936kB",
-      "available": "7022500kB",
-      "buffers": "365440kB",
-      "cached": "7222672kB",
-      "active": "9606340kB",
-      "inactive": "4083604kB",
-      "dirty": "3676kB",
+      "free": "359188kB",
+      "available": "6832452kB",
+      "buffers": "388764kB",
+      "cached": "7159028kB",
+      "active": "9906484kB",
+      "inactive": "3863812kB",
+      "dirty": "148kB",
       "writeback": "0kB",
-      "anon_pages": "6412436kB",
-      "mapped": "2407980kB",
-      "slab": "559228kB",
-      "slab_reclaimable": "316280kB",
-      "slab_unreclaim": "242948kB",
-      "page_tables": "102500kB",
+      "anon_pages": "6539152kB",
+      "mapped": "2430612kB",
+      "slab": "557136kB",
+      "slab_reclaimable": "309904kB",
+      "slab_unreclaim": "247232kB",
+      "page_tables": "104288kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "10138592kB",
-      "committed_as": "21066616kB",
+      "committed_as": "21815196kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "47760kB",
+      "vmalloc_used": "48936kB",
       "vmalloc_chunk": "0kB",
       "hugepage_size": "2048kB",
       "hugetlb": "0kB"
@@ -825,7 +825,7 @@
               "destination": "default",
               "family": "inet",
               "via": "192.168.0.1",
-              "metric": "20600",
+              "metric": "600",
               "proto": "dhcp"
             },
             {
@@ -990,16 +990,16 @@
           "lo": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "3070851",
-              "packets": "17926",
+              "bytes": "3273813",
+              "packets": "19224",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "3070851",
-              "packets": "17926",
+              "bytes": "3273813",
+              "packets": "19224",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1008,16 +1008,16 @@
           "wlo1": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "39608976",
-              "packets": "290483",
+              "bytes": "41174929",
+              "packets": "298169",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "815045071",
-              "packets": "584340",
+              "bytes": "824884835",
+              "packets": "595627",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1026,8 +1026,8 @@
           "tun0": {
             "tx": {
               "queuelen": "100",
-              "bytes": "84828",
-              "packets": "436",
+              "bytes": "96028",
+              "packets": "492",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -1111,12 +1111,211 @@
     "platform": "ubuntu",
     "platform_version": "18.04",
     "platform_family": "debian",
-    "uptime_seconds": 12764,
-    "uptime": "3 hours 32 minutes 44 seconds",
-    "idletime_seconds": 97419,
-    "idletime": "1 day 03 hours 03 minutes 39 seconds",
+    "uptime_seconds": 14457,
+    "uptime": "4 hours 00 minutes 57 seconds",
+    "idletime_seconds": 110198,
+    "idletime": "1 day 06 hours 36 minutes 38 seconds",
     "dmi": {
-      "dmidecode_version": "3.1"
+      "dmidecode_version": "3.1",
+      "table_location": "0x71D2C000",
+      "bios": {
+        "all_records": [
+          {
+            "record_id": "0x0000",
+            "size": "0",
+            "application_identifier": "BIOS Information",
+            "Vendor": "American Megatrends Inc.",
+            "Version": "X521JQ.303",
+            "Release Date": "06/17/2020",
+            "Address": "0xF0000",
+            "Runtime Size": "64 kB",
+            "ROM Size": "16 MB",
+            "Characteristics": {
+              "UEFI is supported": null
+            },
+            "BIOS Revision": "5.14"
+          }
+        ],
+        "vendor": "American Megatrends Inc.",
+        "version": "X521JQ.303",
+        "release_date": "06/17/2020",
+        "address": "0xF0000",
+        "runtime_size": "64 kB",
+        "rom_size": "16 MB",
+        "bios_revision": "5.14"
+      },
+      "system": {
+        "all_records": [
+          {
+            "record_id": "0x0001",
+            "size": "1",
+            "application_identifier": "System Information",
+            "Manufacturer": "ASUSTeK COMPUTER INC.",
+            "Product Name": "VivoBook_ASUSLaptop X521JQ_S533JQ",
+            "Version": "1.0       ",
+            "Serial Number": "L6N0CV01178423D",
+            "UUID": "EF112CB3-08D6-8641-A208-B437A21B9A87",
+            "Wake-up Type": "Power Switch",
+            "SKU Number": " ",
+            "Family": "VivoBook"
+          }
+        ],
+        "manufacturer": "ASUSTeK COMPUTER INC.",
+        "product_name": "VivoBook_ASUSLaptop X521JQ_S533JQ",
+        "version": "1.0",
+        "serial_number": "L6N0CV01178423D",
+        "uuid": "EF112CB3-08D6-8641-A208-B437A21B9A87",
+        "wake_up_type": "Power Switch",
+        "sku_number": "",
+        "family": "VivoBook"
+      },
+      "base_board": {
+        "all_records": [
+          {
+            "record_id": "0x0002",
+            "size": "2",
+            "application_identifier": "Base Board Information",
+            "Manufacturer": "ASUSTeK COMPUTER INC.",
+            "Product Name": "X521JQ",
+            "Version": "1.0       ",
+            "Serial Number": "L522NBCV010W6FMB",
+            "Asset Tag": "ATN12345678901234567",
+            "Features": {
+              "Board is replaceable": null
+            },
+            "Location In Chassis": "MIDDLE              ",
+            "Chassis Handle": "0x0003",
+            "Type": "Motherboard",
+            "Contained Object Handles": "0"
+          }
+        ],
+        "manufacturer": "ASUSTeK COMPUTER INC.",
+        "product_name": "X521JQ",
+        "version": "1.0",
+        "serial_number": "L522NBCV010W6FMB",
+        "asset_tag": "ATN12345678901234567",
+        "location_in_chassis": "MIDDLE",
+        "chassis_handle": "0x0003",
+        "type": "Motherboard",
+        "contained_object_handles": "0"
+      },
+      "chassis": {
+        "all_records": [
+          {
+            "record_id": "0x0003",
+            "size": "3",
+            "application_identifier": "Chassis Information",
+            "Manufacturer": "ASUSTeK COMPUTER INC.",
+            "Type": "Notebook",
+            "Lock": "Not Present",
+            "Version": "1.0       ",
+            "Serial Number": "L6N0CV01178423D",
+            "Asset Tag": "No Asset Tag",
+            "Boot-up State": "Safe",
+            "Power Supply State": "Safe",
+            "Thermal State": "Safe",
+            "Security Status": "None",
+            "OEM Information": "0x00000000",
+            "Height": "Unspecified",
+            "Number Of Power Cords": "1",
+            "Contained Elements": "0",
+            "SKU Number": "NA"
+          }
+        ],
+        "manufacturer": "ASUSTeK COMPUTER INC.",
+        "type": "Notebook",
+        "lock": "Not Present",
+        "version": "1.0",
+        "serial_number": "L6N0CV01178423D",
+        "asset_tag": "No Asset Tag",
+        "boot_up_state": "Safe",
+        "power_supply_state": "Safe",
+        "thermal_state": "Safe",
+        "security_status": "None",
+        "oem_information": "0x00000000",
+        "height": "Unspecified",
+        "number_of_power_cords": "1",
+        "contained_elements": "0",
+        "sku_number": "NA"
+      },
+      "oem_strings": {
+        "all_records": [
+          {
+            "record_id": "0x0020",
+            "size": "11",
+            "application_identifier": "OEM Strings",
+            "String 1": "kPJ-+7X7+EfTa",
+            "String 2": "jTyRUBSNi7Ydf",
+            "String 3": "fCrOzJ6x1i-eh",
+            "String 4": " ",
+            "String 5": "90NB0SN3-M00490"
+          }
+        ],
+        "string_1": "kPJ-+7X7+EfTa",
+        "string_2": "jTyRUBSNi7Ydf",
+        "string_3": "fCrOzJ6x1i-eh",
+        "string_4": "",
+        "string_5": "90NB0SN3-M00490"
+      },
+      "processor": {
+        "all_records": [
+          {
+            "record_id": "0x0030",
+            "size": "4",
+            "application_identifier": "Processor Information",
+            "Socket Designation": "U3E1",
+            "Type": "Central Processor",
+            "Family": "Core i7",
+            "Manufacturer": "Intel(R) Corporation",
+            "ID": "E5 06 07 00 FF FB EB BF",
+            "Signature": "Type 0, Family 6, Model 126, Stepping 5",
+            "Flags": {
+              "PBE (Pending break enabled)": null
+            },
+            "Version": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
+            "Voltage": "1.1 V",
+            "External Clock": "100 MHz",
+            "Max Speed": "8300 MHz",
+            "Current Speed": "3500 MHz",
+            "Status": "Populated, Enabled",
+            "Upgrade": "Other",
+            "L1 Cache Handle": "0x002D",
+            "L2 Cache Handle": "0x002E",
+            "L3 Cache Handle": "0x002F",
+            "Serial Number": "To Be Filled By O.E.M.",
+            "Asset Tag": "To Be Filled By O.E.M.",
+            "Part Number": "To Be Filled By O.E.M.",
+            "Core Count": "4",
+            "Core Enabled": "4",
+            "Thread Count": "8",
+            "Characteristics": {
+              "Power/Performance Control": null
+            }
+          }
+        ],
+        "socket_designation": "U3E1",
+        "type": "Central Processor",
+        "family": "Core i7",
+        "manufacturer": "Intel(R) Corporation",
+        "id": "E5 06 07 00 FF FB EB BF",
+        "signature": "Type 0, Family 6, Model 126, Stepping 5",
+        "version": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
+        "voltage": "1.1 V",
+        "external_clock": "100 MHz",
+        "max_speed": "8300 MHz",
+        "current_speed": "3500 MHz",
+        "status": "Populated, Enabled",
+        "upgrade": "Other",
+        "l1_cache_handle": "0x002D",
+        "l2_cache_handle": "0x002E",
+        "l3_cache_handle": "0x002F",
+        "serial_number": "To Be Filled By O.E.M.",
+        "asset_tag": "To Be Filled By O.E.M.",
+        "part_number": "To Be Filled By O.E.M.",
+        "core_count": "4",
+        "core_enabled": "4",
+        "thread_count": "8"
+      }
     },
     "cpu": {
       "numa_node_cpus": {
@@ -1151,7 +1350,7 @@
       "model": "126",
       "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
       "stepping": "5",
-      "mhz": "2635.294",
+      "mhz": "1601.158",
       "mhz_max": "3900.0000",
       "mhz_min": "400.0000",
       "bogomips": "2995.20",
@@ -1305,7 +1504,7 @@
         "model": "126",
         "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
         "stepping": "5",
-        "mhz": "2635.294",
+        "mhz": "1601.158",
         "bogomips": "2995.20",
         "cache_size": "8192 KB",
         "physical_id": "0",
@@ -1457,7 +1656,7 @@
         "model": "126",
         "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
         "stepping": "5",
-        "mhz": "2635.294",
+        "mhz": "1601.158",
         "bogomips": "2995.20",
         "cache_size": "8192 KB",
         "physical_id": "0",
@@ -1609,7 +1808,7 @@
         "model": "126",
         "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
         "stepping": "5",
-        "mhz": "2635.294",
+        "mhz": "1601.158",
         "bogomips": "2995.20",
         "cache_size": "8192 KB",
         "physical_id": "0",
@@ -1761,7 +1960,7 @@
         "model": "126",
         "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
         "stepping": "5",
-        "mhz": "2635.294",
+        "mhz": "1601.158",
         "bogomips": "2995.20",
         "cache_size": "8192 KB",
         "physical_id": "0",
@@ -1913,7 +2112,7 @@
         "model": "126",
         "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
         "stepping": "5",
-        "mhz": "2635.294",
+        "mhz": "1601.158",
         "bogomips": "2995.20",
         "cache_size": "8192 KB",
         "physical_id": "0",
@@ -2065,7 +2264,7 @@
         "model": "126",
         "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
         "stepping": "5",
-        "mhz": "2635.294",
+        "mhz": "1601.158",
         "bogomips": "2995.20",
         "cache_size": "8192 KB",
         "physical_id": "0",
@@ -2217,7 +2416,7 @@
         "model": "126",
         "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
         "stepping": "5",
-        "mhz": "2635.294",
+        "mhz": "1601.158",
         "bogomips": "2995.20",
         "cache_size": "8192 KB",
         "physical_id": "0",
@@ -2369,7 +2568,7 @@
         "model": "126",
         "model_name": "Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz",
         "stepping": "5",
-        "mhz": "2635.294",
+        "mhz": "1601.158",
         "bogomips": "2995.20",
         "cache_size": "8192 KB",
         "physical_id": "0",
@@ -2542,9 +2741,6 @@
           "description": "ldd (Ubuntu GLIBC 2.27-3ubuntu1.4) 2.27"
         }
       },
-      "go": {
-        "version": "1.13"
-      },
       "java": {
         "version": "11.0.11",
         "runtime": {
@@ -2697,12 +2893,12 @@
         },
         "tmpfs": {
           "kb_size": "1608288",
-          "kb_used": "48",
-          "kb_available": "1608240",
-          "percent_used": "1%",
+          "kb_used": "0",
+          "kb_available": "1608288",
+          "percent_used": "0%",
           "total_inodes": "2010361",
-          "inodes_used": "44",
-          "inodes_available": "2010317",
+          "inodes_used": "12",
+          "inodes_available": "2010349",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -2711,9 +2907,7 @@
             "nodev",
             "relatime",
             "size=1608288k",
-            "mode=700",
-            "uid=1000",
-            "gid=1000"
+            "mode=700"
           ],
           "mounts": [
             "/run",
@@ -2721,17 +2915,18 @@
             "/run/lock",
             "/sys/fs/cgroup",
             "/run/user/121",
-            "/run/user/1000"
+            "/run/user/1000",
+            "/run/user/0"
           ]
         },
         "/dev/nvme1n1p2": {
           "kb_size": "490691512",
-          "kb_used": "72986388",
-          "kb_available": "392709644",
+          "kb_used": "72978372",
+          "kb_available": "392717660",
           "percent_used": "16%",
           "total_inodes": "31227904",
-          "inodes_used": "1196982",
-          "inodes_available": "30030922",
+          "inodes_used": "1197718",
+          "inodes_available": "30030186",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -2984,12 +3179,12 @@
         },
         "/dev/nvme0n1p1": {
           "kb_size": "245084768",
-          "kb_used": "26544844",
-          "kb_available": "206020640",
+          "kb_used": "26544960",
+          "kb_available": "206020524",
           "percent_used": "12%",
           "total_inodes": "15630336",
-          "inodes_used": "142411",
-          "inodes_available": "15487925",
+          "inodes_used": "142425",
+          "inodes_available": "15487911",
           "inodes_percent_used": "1%",
           "fs_type": "ext4",
           "mount_options": [
@@ -3968,12 +4163,12 @@
         },
         "/run": {
           "kb_size": "1608292",
-          "kb_used": "2352",
-          "kb_available": "1605940",
+          "kb_used": "2376",
+          "kb_available": "1605916",
           "percent_used": "1%",
           "total_inodes": "2010361",
-          "inodes_used": "1352",
-          "inodes_available": "2009009",
+          "inodes_used": "1366",
+          "inodes_available": "2008995",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -3990,12 +4185,12 @@
         },
         "/": {
           "kb_size": "490691512",
-          "kb_used": "72986388",
-          "kb_available": "392709644",
+          "kb_used": "72978372",
+          "kb_available": "392717660",
           "percent_used": "16%",
           "total_inodes": "31227904",
-          "inodes_used": "1196982",
-          "inodes_available": "30030922",
+          "inodes_used": "1197718",
+          "inodes_available": "30030186",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -4010,12 +4205,12 @@
         },
         "/dev/shm": {
           "kb_size": "8041444",
-          "kb_used": "158136",
-          "kb_available": "7883308",
-          "percent_used": "2%",
+          "kb_used": "176028",
+          "kb_available": "7865416",
+          "percent_used": "3%",
           "total_inodes": "2010361",
-          "inodes_used": "641",
-          "inodes_available": "2009720",
+          "inodes_used": "786",
+          "inodes_available": "2009575",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -4429,12 +4624,12 @@
         },
         "/home/jarotball/study": {
           "kb_size": "245084768",
-          "kb_used": "26544844",
-          "kb_available": "206020640",
+          "kb_used": "26544960",
+          "kb_available": "206020524",
           "percent_used": "12%",
           "total_inodes": "15630336",
-          "inodes_used": "142411",
-          "inodes_available": "15487925",
+          "inodes_used": "142425",
+          "inodes_available": "15487911",
           "inodes_percent_used": "1%",
           "fs_type": "ext4",
           "mount_options": [
@@ -4914,6 +5109,28 @@
             "tmpfs"
           ]
         },
+        "/run/user/0": {
+          "kb_size": "1608288",
+          "kb_used": "0",
+          "kb_available": "1608288",
+          "percent_used": "0%",
+          "total_inodes": "2010361",
+          "inodes_used": "12",
+          "inodes_available": "2010349",
+          "inodes_percent_used": "1%",
+          "fs_type": "tmpfs",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "relatime",
+            "size=1608288k",
+            "mode=700"
+          ],
+          "devices": [
+            "tmpfs"
+          ]
+        },
         "/sys": {
           "fs_type": "sysfs",
           "mount_options": [
@@ -5295,13 +5512,13 @@
         "tmpfs,/run": {
           "device": "tmpfs",
           "kb_size": "1608292",
-          "kb_used": "2352",
-          "kb_available": "1605940",
+          "kb_used": "2376",
+          "kb_available": "1605916",
           "percent_used": "1%",
           "mount": "/run",
           "total_inodes": "2010361",
-          "inodes_used": "1352",
-          "inodes_available": "2009009",
+          "inodes_used": "1366",
+          "inodes_available": "2008995",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -5316,13 +5533,13 @@
         "/dev/nvme1n1p2,/": {
           "device": "/dev/nvme1n1p2",
           "kb_size": "490691512",
-          "kb_used": "72986388",
-          "kb_available": "392709644",
+          "kb_used": "72978372",
+          "kb_available": "392717660",
           "percent_used": "16%",
           "mount": "/",
           "total_inodes": "31227904",
-          "inodes_used": "1196982",
-          "inodes_available": "30030922",
+          "inodes_used": "1197718",
+          "inodes_available": "30030186",
           "inodes_percent_used": "4%",
           "fs_type": "ext4",
           "mount_options": [
@@ -5335,13 +5552,13 @@
         "tmpfs,/dev/shm": {
           "device": "tmpfs",
           "kb_size": "8041444",
-          "kb_used": "158136",
-          "kb_available": "7883308",
-          "percent_used": "2%",
+          "kb_used": "176028",
+          "kb_available": "7865416",
+          "percent_used": "3%",
           "mount": "/dev/shm",
           "total_inodes": "2010361",
-          "inodes_used": "641",
-          "inodes_available": "2009720",
+          "inodes_used": "786",
+          "inodes_available": "2009575",
           "inodes_percent_used": "1%",
           "fs_type": "tmpfs",
           "mount_options": [
@@ -5615,13 +5832,13 @@
         "/dev/nvme0n1p1,/home/jarotball/study": {
           "device": "/dev/nvme0n1p1",
           "kb_size": "245084768",
-          "kb_used": "26544844",
-          "kb_available": "206020640",
+          "kb_used": "26544960",
+          "kb_available": "206020524",
           "percent_used": "12%",
           "mount": "/home/jarotball/study",
           "total_inodes": "15630336",
-          "inodes_used": "142411",
-          "inodes_available": "15487925",
+          "inodes_used": "142425",
+          "inodes_available": "15487911",
           "inodes_percent_used": "1%",
           "fs_type": "ext4",
           "mount_options": [
@@ -5941,6 +6158,27 @@
             "mode=700",
             "uid=1000",
             "gid=1000"
+          ]
+        },
+        "tmpfs,/run/user/0": {
+          "device": "tmpfs",
+          "kb_size": "1608288",
+          "kb_used": "0",
+          "kb_available": "1608288",
+          "percent_used": "0%",
+          "mount": "/run/user/0",
+          "total_inodes": "2010361",
+          "inodes_used": "12",
+          "inodes_available": "2010349",
+          "inodes_percent_used": "1%",
+          "fs_type": "tmpfs",
+          "mount_options": [
+            "rw",
+            "nosuid",
+            "nodev",
+            "relatime",
+            "size=1608288k",
+            "mode=700"
           ]
         },
         "sysfs,/sys": {
@@ -6698,53 +6936,7 @@
     "habitat": {
       "version": "1.6.351/20210706202052",
       "packages": [
-        "core/acl/2.2.53/20200305230628",
-        "core/attr/2.4.48/20200305230504",
-        "core/bash/5.0.16/20200305233030",
-        "core/binutils/2.32/20200305174809",
-        "core/bzip2/1.0.8/20200305225842",
-        "core/cacerts/2020.01.01/20200306005234",
-        "core/coreutils/8.30/20200305231640",
-        "core/diffutils/3.7/20200306000423",
-        "core/file/5.37/20200305174635",
-        "core/findutils/4.6.0/20200306000932",
-        "core/gawk/5.0.1/20200305233704",
-        "core/gcc-libs/9.1.0/20200305225533",
-        "core/glibc/2.29/20200305172459",
-        "core/gmp/6.1.2/20200305175803",
-        "core/grep/3.3/20200305232635",
-        "core/gzip/1.10/20200306002325",
-        "core/hab-backline/1.6.351/20210706203732",
-        "core/hab-plan-build/1.6.351/20210706203607",
-        "core/hab-studio/1.6.351/20210706203840",
-        "core/hab/1.6.351/20210706202052",
-        "core/less/530/20200305235121",
-        "core/libbsd/0.9.1/20200306015546",
-        "core/libcap/2.27/20200305230759",
-        "core/libiconv/1.14/20200306010416",
-        "core/libidn2/2.0.4/20200306010601",
-        "core/libunistring/0.9.10/20200306010001",
-        "core/linux-headers/4.19.62/20200305172241",
-        "core/make/4.2.1/20200306002515",
-        "core/mg/20180408/20200306015846",
-        "core/mpfr/4.0.1/20200305180218",
-        "core/ncurses/6.1/20200305230210",
-        "core/openssl-fips/2.0.16/20200306005307",
-        "core/openssl/1.0.2t/20200306005450",
-        "core/pcre/8.42/20200305232429",
-        "core/readline/8.0/20200305232850",
-        "core/rq/0.10.4/20200306011144",
-        "core/sed/4.5/20200305230928",
-        "core/tar/1.32/20200305233447",
-        "core/unzip/6.0/20200306011037",
-        "core/util-linux/2.34/20200306003119",
-        "core/vim/8.1.1694/20200306015156",
-        "core/wget/1.19.5/20200306010801",
-        "core/xz/5.2.4/20200306001321",
-        "core/zlib/1.2.11/20200305174519"
-      ],
-      "services": [
-
+        "https://www.chef.io/end-user-license-agreement"
       ]
     },
     "init_package": "systemd",
@@ -7079,31 +7271,31 @@
       "system-state-logs": "/var/log",
       "system-state-cache": "/var/cache",
       "system-state-spool": "/var/spool",
-      "user-binaries": "/home/jarotball/.local/bin",
-      "user-library-private": "/home/jarotball/.local/lib",
-      "user-library-arch": "/home/jarotball/.local/lib/x86_64-linux-gnu",
-      "user-shared": "/home/jarotball/.local/share",
-      "user-configuration": "/home/jarotball/.config",
-      "user-runtime": "/run/user/1000",
-      "user-state-cache": "/home/jarotball/.cache",
-      "user": "/home/jarotball",
-      "user-documents": "/home/jarotball/Documents",
-      "user-music": "/home/jarotball/Music",
-      "user-pictures": "/home/jarotball/Pictures",
-      "user-videos": "/home/jarotball/Videos",
-      "user-download": "/home/jarotball/Downloads",
-      "user-public": "/home/jarotball/Public",
-      "user-templates": "/home/jarotball/Templates",
-      "user-desktop": "/home/jarotball/Desktop",
+      "user-binaries": "/root/.local/bin",
+      "user-library-private": "/root/.local/lib",
+      "user-library-arch": "/root/.local/lib/x86_64-linux-gnu",
+      "user-shared": "/root/.local/share",
+      "user-configuration": "/root/.config",
+      "user-runtime": "/run/user/0",
+      "user-state-cache": "/root/.cache",
+      "user": "/root",
+      "user-documents": "/root",
+      "user-music": "/root",
+      "user-pictures": "/root",
+      "user-videos": "/root",
+      "user-download": "/root",
+      "user-public": "/root",
+      "user-templates": "/root",
+      "user-desktop": "/root/Desktop",
       "search-binaries": "/opt/chef-workstation/embedded/bin",
-      "search-library-private": "/home/jarotball/.local/lib",
-      "search-library-arch": "/home/jarotball/.local/lib/x86_64-linux-gnu",
-      "search-shared": "/home/jarotball/.local/share",
+      "search-library-private": "/root/.local/lib",
+      "search-library-arch": "/root/.local/lib/x86_64-linux-gnu",
+      "search-shared": "/root/.local/share",
       "search-configuration-factory": "/usr/local/share/factory/etc",
       "search-state-factory": "/usr/local/share/factory/var",
-      "search-configuration": "/home/jarotball/.config"
+      "search-configuration": "/root/.config"
     },
-    "ohai_time": 1630318006.534316,
+    "ohai_time": 1630319699.560052,
     "packages": {
       "accountsservice": {
         "version": "0.6.45-1ubuntu1.3",
@@ -7155,6 +7347,18 @@
       },
       "anydesk": {
         "version": "6.1.0",
+        "arch": "amd64"
+      },
+      "apache2-bin": {
+        "version": "2.4.29-1ubuntu4.16",
+        "arch": "amd64"
+      },
+      "apache2-data": {
+        "version": "2.4.29-1ubuntu4.16",
+        "arch": "all"
+      },
+      "apache2-utils": {
+        "version": "2.4.29-1ubuntu4.16",
         "arch": "amd64"
       },
       "apg": {
@@ -9235,6 +9439,22 @@
       },
       "libappstream4": {
         "version": "0.12.0-3ubuntu1",
+        "arch": "amd64"
+      },
+      "libapr1": {
+        "version": "1.6.3-2",
+        "arch": "amd64"
+      },
+      "libaprutil1": {
+        "version": "1.6.1-2",
+        "arch": "amd64"
+      },
+      "libaprutil1-dbd-sqlite3": {
+        "version": "1.6.1-2",
+        "arch": "amd64"
+      },
+      "libaprutil1-ldap": {
+        "version": "1.6.1-2",
         "arch": "amd64"
       },
       "libapt-inst2.0": {
@@ -11363,6 +11583,10 @@
       },
       "liblua5.1-0": {
         "version": "5.1.5-8.1build2",
+        "arch": "amd64"
+      },
+      "liblua5.2-0": {
+        "version": "5.2.4-1.1build1",
         "arch": "amd64"
       },
       "liblua5.3-0": {
@@ -15755,6 +15979,7 @@
       }
     },
     "root_group": "root",
+    "shard_seed": 61027257,
     "shells": [
       "/bin/sh",
       "/bin/bash",
@@ -15825,7 +16050,7 @@
       "ULONG_MAX": 18446744073709551615,
       "USHRT_MAX": 65535,
       "WORD_BIT": 32,
-      "_AVPHYS_PAGES": 113716,
+      "_AVPHYS_PAGES": 87390,
       "_NPROCESSORS_CONF": 8,
       "_NPROCESSORS_ONLN": 8,
       "_PHYS_PAGES": 4020722,
@@ -16088,180 +16313,10 @@
     },
     "virtualbox": {
       "guests": {
-        "kitchen-base_infra_habitat-base-centos-80-d4fa3372-e43e-46e4-b715-dc502f2eb092": {
-          "groups": "/",
-          "ostype": "Red Hat (64-bit)",
-          "uuid": "22fd6a94-07e7-4ec9-8fed-b3f22f31958b",
-          "cfgfile": "/home/jarotball/VirtualBox VMs/kitchen-base_infra_habitat-base-centos-80-d4fa3372-e43e-46e4-b715-dc502f2eb092/kitchen-base_infra_habitat-base-centos-80-d4fa3372-e43e-46e4-b715-dc502f2eb092.vbox",
-          "snapfldr": "/home/jarotball/VirtualBox VMs/kitchen-base_infra_habitat-base-centos-80-d4fa3372-e43e-46e4-b715-dc502f2eb092/Snapshots",
-          "logfldr": "/home/jarotball/VirtualBox VMs/kitchen-base_infra_habitat-base-centos-80-d4fa3372-e43e-46e4-b715-dc502f2eb092/Logs",
-          "hardwareuuid": "22fd6a94-07e7-4ec9-8fed-b3f22f31958b",
-          "memory": "1024",
-          "pagefusion": "off",
-          "vram": "8",
-          "cpuexecutioncap": "100",
-          "hpet": "off",
-          "cpu-profile": "host",
-          "chipset": "piix3",
-          "firmware": "BIOS",
-          "cpus": "1",
-          "pae": "on",
-          "longmode": "on",
-          "triplefaultreset": "off",
-          "apic": "on",
-          "x2apic": "on",
-          "nested-hw-virt": "off",
-          "cpuid-portability-level": "0",
-          "bootmenu": "messageandmenu",
-          "boot1": "disk",
-          "boot2": "dvd",
-          "boot3": "none",
-          "boot4": "none",
-          "acpi": "on",
-          "ioapic": "on",
-          "biosapic": "apic",
-          "biossystemtimeoffset": "0",
-          "rtcuseutc": "on",
-          "hwvirtex": "on",
-          "nestedpaging": "on",
-          "largepages": "on",
-          "vtxvpid": "on",
-          "vtxux": "on",
-          "paravirtprovider": "default",
-          "effparavirtprovider": "kvm",
-          "vmstate": "running",
-          "vmstatechangetime": "2021-08-30T08:46:18.914000000",
-          "graphicscontroller": "vboxvga",
-          "monitorcount": "1",
-          "accelerate3d": "off",
-          "accelerate2dvideo": "off",
-          "teleporterenabled": "off",
-          "teleporterport": "0",
-          "teleporteraddress": "",
-          "teleporterpassword": "",
-          "tracing-enabled": "off",
-          "tracing-allow-vm-access": "off",
-          "tracing-config": "",
-          "autostart-enabled": "off",
-          "autostart-delay": "0",
-          "defaultfrontend": "",
-          "vmprocpriority": "default",
-          "storagecontrollername0": "IDE Controller",
-          "storagecontrollertype0": "PIIX4",
-          "storagecontrollerinstance0": "0",
-          "storagecontrollermaxportcount0": "2",
-          "storagecontrollerportcount0": "2",
-          "storagecontrollerbootable0": "on",
-          "storagecontrollername1": "SATA Controller",
-          "storagecontrollertype1": "IntelAhci",
-          "storagecontrollerinstance1": "0",
-          "storagecontrollermaxportcount1": "30",
-          "storagecontrollerportcount1": "1",
-          "storagecontrollerbootable1": "on",
-          "ide controller-0-0": "none",
-          "ide controller-0-1": "none",
-          "ide controller-1-0": "none",
-          "ide controller-1-1": "none",
-          "sata controller-0-0": "/home/jarotball/VirtualBox VMs/kitchen-base_infra_habitat-base-centos-80-d4fa3372-e43e-46e4-b715-dc502f2eb092/centos-8.0-x86_64-disk001.vmdk",
-          "sata controller-imageuuid-0-0": "9508c499-ad01-4601-a4be-0fc1c1c34e5d",
-          "natnet1": "nat",
-          "macaddress1": "08002758CD89",
-          "cableconnected1": "on",
-          "nic1": "nat",
-          "nictype1": "82540EM",
-          "nicspeed1": "0",
-          "mtu": "0",
-          "socksnd": "64",
-          "sockrcv": "64",
-          "tcpwndsnd": "64",
-          "tcpwndrcv": "64",
-          "forwarding(0)": "ssh,tcp,127.0.0.1,2222,,22",
-          "nic2": "none",
-          "nic3": "none",
-          "nic4": "none",
-          "nic5": "none",
-          "nic6": "none",
-          "nic7": "none",
-          "nic8": "none",
-          "hidpointing": "ps2mouse",
-          "hidkeyboard": "ps2kbd",
-          "uart1": "off",
-          "uart2": "off",
-          "uart3": "off",
-          "uart4": "off",
-          "lpt1": "off",
-          "lpt2": "off",
-          "audio": "none",
-          "audio_out": "off",
-          "audio_in": "off",
-          "clipboard": "disabled",
-          "draganddrop": "disabled",
-          "sessionname": "headless",
-          "videomode": "800,600,32\"@0,0 1",
-          "vrde": "on",
-          "vrdeport": "5987",
-          "vrdeports": "5987",
-          "vrdeaddress": "127.0.0.1",
-          "vrdeauthtype": "null",
-          "vrdemulticon": "off",
-          "vrdereusecon": "off",
-          "vrdevideochannel": "off",
-          "vrdeproperty[tcp/ports]": "5987",
-          "vrdeproperty[tcp/address]": "127.0.0.1",
-          "vrdeproperty[videochannel/enabled]": "<not set>",
-          "vrdeproperty[videochannel/quality]": "<not set>",
-          "vrdeproperty[videochannel/downscaleprotection]": "<not set>",
-          "vrdeproperty[client/disabledisplay]": "<not set>",
-          "vrdeproperty[client/disableinput]": "<not set>",
-          "vrdeproperty[client/disableaudio]": "<not set>",
-          "vrdeproperty[client/disableusb]": "<not set>",
-          "vrdeproperty[client/disableclipboard]": "<not set>",
-          "vrdeproperty[client/disableupstreamaudio]": "<not set>",
-          "vrdeproperty[client/disablerdpdr]": "<not set>",
-          "vrdeproperty[h3dredirect/enabled]": "<not set>",
-          "vrdeproperty[security/method]": "<not set>",
-          "vrdeproperty[security/servercertificate]": "<not set>",
-          "vrdeproperty[security/serverprivatekey]": "<not set>",
-          "vrdeproperty[security/cacertificate]": "<not set>",
-          "vrdeproperty[audio/ratecorrectionmode]": "<not set>",
-          "vrdeproperty[audio/logpath]": "<not set>",
-          "usb": "off",
-          "ehci": "off",
-          "xhci": "off",
-          "sharedfoldernamemachinemapping1": "tmp_results",
-          "sharedfolderpathmachinemapping1": "/home/jarotball/study/Chef-Principle-Analyst-Exam-Prep/2_Learn the Chef Infra Language/base_infra_habitat/results",
-          "sharedfoldernamemachinemapping2": "tmp_omnibus_cache",
-          "sharedfolderpathmachinemapping2": "/home/jarotball/.kitchen/cache",
-          "vrdeactiveconnection": "off",
-          "vrdeclients": "",
-          "videocap": "off",
-          "videocapaudio": "off",
-          "capturescreens": "0",
-          "capturefilename": "/home/jarotball/VirtualBox VMs/centos-8.0-x86_64_1630313171542_99015/centos-8.0-x86_64_1630313171542_99015.webm",
-          "captureres": "1024x768",
-          "capturevideorate": "512",
-          "capturevideofps": "25",
-          "captureopts": "",
-          "guestmemoryballoon": "0",
-          "guestostype": "Linux26_64",
-          "guestadditionsrunlevel": "2",
-          "guestadditionsversion": "6.1.0 r135406",
-          "guestadditionsfacility_virtualbox base driver": "50,1630313188297",
-          "guestadditionsfacility_virtualbox system service": "50,1630313195630",
-          "guestadditionsfacility_seamless mode": "0,1630313188298",
-          "guestadditionsfacility_graphics mode": "0,1630313188296"
-        }
+
       },
       "hdds": {
-        "/home/jarotball/VirtualBox VMs/kitchen-base_infra_habitat-base-centos-80-d4fa3372-e43e-46e4-b715-dc502f2eb092/centos-8.0-x86_64-disk001.vmdk": {
-          "uuid": "9508c499-ad01-4601-a4be-0fc1c1c34e5d",
-          "parent uuid": "base",
-          "state": "locked write",
-          "type": "normal (base)",
-          "storage format": "VMDK",
-          "capacity": "65536 MBytes",
-          "encryption": "disabled"
-        }
+
       },
       "dvds": {
 
@@ -16276,7 +16331,7 @@
         "vboxnet0": {
           "guid": "786f6276-656e-4074-8000-0a0027000000",
           "dhcp": "Disabled",
-          "ipaddress": "192.168.33.1",
+          "ipaddress": "192.168.56.1",
           "networkmask": "255.255.255.0",
           "ipv6address": "",
           "ipv6networkmaskprefixlength": "0",
@@ -16350,7 +16405,7 @@
 
       }
     },
-    "chef_guid": "a8512fb0-a7ca-4431-a8c0-90958afce800",
+    "chef_guid": "e309752c-867f-4f1a-ad78-aa2c79b3419a",
     "name": "jarotball",
     "chef_environment": "_default",
     "recipes": [

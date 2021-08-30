@@ -99,3 +99,18 @@
 - [ ] You get an error message but the chef-client run continues.
 - [ ] You get an error message and the chef-client run halts.
 - [x] The default action is assumed.
+
+### Q21. What does the code package 'httpd' do?
+- [x] It identifies a package resource.
+- [ ] It tags the system as a web server.
+- [ ] It is incomplete and will cause an error message.
+
+### Q22. What determines when Chef applies resources?
+- [ ] The order of their precedence.
+- [ ] The order of their attributes.
+- [x] The order they're listed in a recipe.
+
+### Q23. When must you list a resource's attributes?
+- [ ] Immediately after the resource name.
+- [ ] Immediately after the actions.
+- [x] You can list them anywhere within the resource block.

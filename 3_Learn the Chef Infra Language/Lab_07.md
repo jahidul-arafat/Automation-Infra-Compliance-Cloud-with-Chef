@@ -1,4 +1,6 @@
-# Lab 07: Create, Update, Restore and Delete resources using Chef-Client (As a part of Chef Automate)
+# Lab 07
+### **A**. Create, Update, Restore and Delete resources using Chef-Client (As a part of Chef Automate) <br>
+### **B**. Create a webserver using chef-client in local machine
 
 > ### Recall
 > - A **Chef resource** describes one part of the system, such as a file, a template, or a package
@@ -16,6 +18,10 @@
 - For learning purpose, we used **--local-mode** argument to apply cookbook directly to see how Chef works.
 - In reality, you will get a **Chef server** and configure a **node** to work with it.
 - Chef always restored the original configuration.
+
+
+
+## A. Create, Update, Restore and Delete resources using Chef-Client (As a part of Chef Automate) <br>
 
 ### Step 01: Updating using chef-client
 ```bash
@@ -107,4 +113,71 @@ Chef Infra Client finished, 1/1 resources updated in 02 seconds # thereby 1/1 re
 > more /tmp/motd
 ---
 more: stat of /tmp/motd failed: No such file or directory   # See, the file doesnt exists anymore
+```
+
+## B. Create a webserver using chef-client in local machine
+```bash
+# 1.1 Create a file named webserver.rb add the below
+> vim webserver.rb
+---
+# Step 01: update the apt cache periodically
+apt_update 'Update the apt cahe daily' do       # Resource 01
+  # apt_update is an Chef Inspec resource. You can find it with > inspec shell > help resources
+  frequency 86_400  # we specify 86,400 seconds to update the cache once every 24 hours. _ is a rybu notion to make it more readable.
+  action :periodic  # means that the update occurs periodically
+end
+
+# Step 02: Install package 'apache2'
+package 'apache2'                               # Resource 02
+
+# Step 03: enable and start
+service 'apache2' do
+  supports status: true
+  action [:enable, :start]                      # Resource 03, 04
+end
+
+# Step 04: Add a sample index page
+file '/var/www/html/index.html' do              # Resource 05
+  content '<html>
+  <body>
+    <h1>hello world</h1>
+  </body>
+</html>'
+end
+
+# 1.2 converge the changes in local machine using chef-client
+# this will install apache2 server in my local machine if not installed earlier
+> sudo chef-client --local-mode webserver.rb
+---
+Converging 4 resources      # <-- Total 05 resources
+Recipe: @recipe_files::/home/jarotball/study/Chef-Principle-Analyst-Exam-Prep/2_Learn the Chef Infra Language/lab07_motd/webserver.rb
+  * apt_update[Update the apt cache daily] action periodic (up to date)
+  * apt_package[apache2] action install
+    - install version 2.4.29-1ubuntu4.16 of package apache2
+  * service[apache2] action enable (up to date)
+  * service[apache2] action restart
+    - restart service service[apache2]
+  * file[/var/www/html/index.html] action create
+    - update content in file /var/www/html/index.html from fffaa2 to 2914aa
+    --- /var/www/html/index.html	2021-08-17 12:21:49.815676228 +0600
+    +++ /var/www/html/.chef-index20210830-15281-6tj48j.html	2021-08-30 16:35:06.978990772 +0600
+    @@ -1,2 +1,6 @@
+    -<h1>The Chef Home Page</h1>
+    +<html>
+    +  <body>
+    +    <h1>hello world</h1>
+    +  </body>
+    +</html>
+
+Running handlers:
+Running handlers complete
+Chef Infra Client finished, 3/5 resources updated in 08 seconds
+
+# 1.3 Confirm your localhost 
+> curl localhost
+---
+<html>
+  <body>
+    <h1>hello world</h1>
+  </body>
 ```

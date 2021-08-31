@@ -9,5 +9,7 @@
     <mapping directory="$PROJECT_DIR$/3_Learn the Chef Infra Language/base_infra_habitat" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/3_Learn the Chef Infra Language/learnchef-hardening-repo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/3_Learn the Chef Infra Language/learnchef-repo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/4_Test Expectations with Chef InSpec/auditd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/4_Test Expectations with Chef InSpec/learn-inspec/auditd" vcs="Git" />
   </component>
 </project>

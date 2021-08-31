@@ -66,9 +66,9 @@ end
 
 ```
 
-### Step 02: Make the controls/try_nginx.rb file more dynamic by including the files/params.yml
+### Step 02: Make the controls/test_nginx.rb file more dynamic by including the files/params.yml
 ```ruby
-# 2.1 Make the controls/try_nginx.rb file more dynamic by including the files/params.yml
+# 2.1 Make the controls/test_nginx.rb file more dynamic by including the files/params.yml
   1 title 'Testing Nginx Compliances'
   2 
   3 # Importing the parameters from Profile file (params.yml) and return as a Dictionary
@@ -135,7 +135,7 @@ Target:  ssh://root@target:22
 
 ```
 
-### Step 03: Now you can test any number of moduls without altering the control files
+### Step 03: Now you can test any number of modules without altering the control files
 ```bash
 # 3.1 Say, check whether the nginx module 'http_geoip' is installed in target machine ot not
 # just add this module name into files/params.yml and you are done

@@ -89,7 +89,7 @@ Target:  ssh://root@target:22
 
   ✔  tmp-1.0: Create /tmp directory     # from controls/example.rb
      ✔  File /tmp should be directory   
-  ✔  nginx-vesion: NGINX version        # from controls/try_nginx.rb
+  ✔  nginx-vesion: NGINX version        # from controls/test_nginx.rb
      ✔  Nginx Environment version should cmp >= "1.10.3"
 
   File /tmp
@@ -98,9 +98,9 @@ Target:  ssh://root@target:22
 Profile Summary: 2 successful controls, 0 control failures, 0 controls skipped
 Test Summary: 3 successful, 0 failures, 0 skipped
 
-# 1.6(a) Add another control in my_nignx/controls/try_nginx.rb to check whether the followign three modules are installed or not: 
+# 1.6(a) Add another control in my_nignx/controls/test_nginx.rb to check whether the followign three modules are installed or not: 
 # ** http_ssl, stream_ssl, mail_ssl
-> vim my_nginx/controls/try_nginx.rb
+> vim my_nginx/controls/test_nginx.rb
 ---
 ... (skipped)
  13 control 'nginx-modules' do
@@ -142,8 +142,8 @@ Test Summary: 6 successful, 0 failures, 0 skipped
 -rw-r--r-- 1 root root 1462 Feb 11  2017 /etc/nginx/nginx.conf
 
 # @workstation
-# 1.7.2 Add another control in controls/try_nginx.rb
-> vim my_nginx/controls/try_nignx.rb
+# 1.7.2 Add another control in controls/test_nginx.rb
+> vim my_nginx/controls/test_nignx.rb
 ---
 ... (skipped)
  24 control 'nginx-conf' do

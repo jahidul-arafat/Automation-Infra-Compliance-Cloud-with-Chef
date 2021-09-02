@@ -1,6 +1,19 @@
 # Lab 11: Build the following deployment architecture in AWS using Terraform
 ![](images/terraform-topology.png)
 
+## Details Description 
+This topology forms a basic three-tier web server and database deployment. In summary:
+
+- the VPC contains two subnets, one for public (Internet) traffic and one for traffic on the private network only.
+- three security groups provide inbound network traffic on ports 22 (SSH), 80 (HTTP), and 3306 (MySQL).
+- two EC2 instances (running Ubuntu 16.04) define the web server and database server. 
+  - The web server is allocated on the public subnet so that it can receive Internet traffic. It provides inbound network access on ports 22 and 80. 
+  - The database server is allocated on the private subnet so that it can receive traffic only from the internal network. It provides inbound network access on ports 22 and 3306.
+
+The EC2 instances do not have any web server or database software installed. They exist to model the roles they would play in a typical three-tier web server and database deployment.
+
+Terraform supports a variety of cloud providers. Each cloud provider is implemented as a plugin.
+
 ### Step 01: Store the aws credentials in terraform.tfvars and load these into our main terraform archiotecture at main.tf
 ```bash
 # 1.1 Create a file named terraform.tfvars to store the aws-credentials

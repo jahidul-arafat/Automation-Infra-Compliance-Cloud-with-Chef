@@ -1,4 +1,4 @@
-# Lab 10: Automate the nginx compliance check | Seperating Logic and Data
+# Lab 10: Automate the nginx compliance check | Separating Logic and Data
 Let's say that your web server or application requires:
 - **NGINX** version 1.10.3 or later
 - the following NGINX modules to be installed:

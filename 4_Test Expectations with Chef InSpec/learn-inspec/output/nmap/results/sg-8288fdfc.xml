@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Thu Sep  2 05:25:19 2021 as: nmap -oX /opt/sgCheckup/results/sg-8288fdfc.xml -Pn -sT -sV -&#45;version-light -T2 -p T:4444 34.224.235.1 -->
+<nmaprun scanner="nmap" args="nmap -oX /opt/sgCheckup/results/sg-8288fdfc.xml -Pn -sT -sV -&#45;version-light -T2 -p T:4444 34.224.235.1" start="1630560319" startstr="Thu Sep  2 05:25:19 2021" version="7.80" xmloutputversion="1.04">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="4444"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1630560320" endtime="1630560322"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="34.224.235.1" addrtype="ipv4"/>
+<hostnames>
+<hostname name="ec2-34-224-235-1.compute-1.amazonaws.com" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="4444"><state state="filtered" reason="no-response" reason_ttl="0"/><service name="krb524" method="table" conf="3"/></port>
+</ports>
+</host>
+<runstats><finished time="1630560322" timestr="Thu Sep  2 05:25:22 2021" elapsed="2.99" summary="Nmap done at Thu Sep  2 05:25:22 2021; 1 IP address (1 host up) scanned in 2.99 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.80 scan initiated Thu Sep  2 05:25:19 2021 as: nmap -oX /opt/sgCheckup/results/sg-07157ff490be6be3f.xml -Pn -sT -sV -&#45;version-light -T2 -p T:7575 52.55.22.138 52.70.229.165 18.211.142.157 -->
+<nmaprun scanner="nmap" args="nmap -oX /opt/sgCheckup/results/sg-07157ff490be6be3f.xml -Pn -sT -sV -&#45;version-light -T2 -p T:7575 52.55.22.138 52.70.229.165 18.211.142.157" start="1630560319" startstr="Thu Sep  2 05:25:19 2021" version="7.80" xmloutputversion="1.04">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="7575"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1630560322" endtime="1630560325"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="52.55.22.138" addrtype="ipv4"/>
+<hostnames>
+<hostname name="ec2-52-55-22-138.compute-1.amazonaws.com" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="7575"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="7.4" extrainfo="protocol 2.0" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.4</cpe></service></port>
+</ports>
+<times srtt="314369" rttvar="314369" to="1571845"/>
+</host>
+<host starttime="1630560323" endtime="1630560325"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="52.70.229.165" addrtype="ipv4"/>
+<hostnames>
+<hostname name="ec2-52-70-229-165.compute-1.amazonaws.com" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="7575"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" product="OpenSSH" version="7.4" extrainfo="protocol 2.0" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:7.4</cpe></service></port>
+</ports>
+<times srtt="262197" rttvar="262197" to="1310985"/>
+</host>
+<host starttime="1630560320" endtime="1630560323"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="18.211.142.157" addrtype="ipv4"/>
+<hostnames>
+<hostname name="ec2-18-211-142-157.compute-1.amazonaws.com" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="7575"><state state="filtered" reason="no-response" reason_ttl="0"/></port>
+</ports>
+</host>
+<runstats><finished time="1630560325" timestr="Thu Sep  2 05:25:25 2021" elapsed="5.69" summary="Nmap done at Thu Sep  2 05:25:25 2021; 3 IP addresses (3 hosts up) scanned in 5.69 seconds" exit="success"/><hosts up="3" down="0" total="3"/>
+</runstats>
+</nmaprun>

@@ -114,3 +114,20 @@
 - [ ] Immediately after the resource name.
 - [ ] Immediately after the actions.
 - [x] You can list them anywhere within the resource block.
+
+
+### Q24.True or False: InSpec uses resources to verify cloud infrastructure
+- [x] True
+- [ ] False
+
+### Q25. What resources can you use to verify the presence of a subnet defined in a VPC?
+- [ ] aws_ec2_instance
+- [ ] aws_subnet
+- [ ] awc_vpc
+- [x] All of the above.
+
+### Q26. What method can you use to make your profiles more dynamic values for testing your instances?
+- [ ] aws_ec2_instance with a name field.
+- [ ] Profile attributes.
+- [ ] Profile files.
+- [x] All of the above.

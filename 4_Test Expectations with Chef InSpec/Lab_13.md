@@ -85,7 +85,9 @@
 ```
 
 ### Step 01: Refactoring the control file
-```ruby
+```bash
+@workstation
+
 # 1.1 (YML Formatting) Run terraform output with '=' replaces with ':' and save the results in attributes.yml file 
 > terraform output | sed s/=/:/g > attributes.yml
 > cat attributes.yml

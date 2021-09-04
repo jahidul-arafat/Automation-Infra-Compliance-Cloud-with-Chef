@@ -20,9 +20,9 @@
 
 ```
 
-#### Pre-requisite Information: (b) controls/instances.rb file which we ned to refactor
+#### Pre-requisite Information: (b) controls/instances.rb file which we need to refactor
 ```ruby
- 1 # webserver
+  1 # webserver
   2 describe aws_ec2_instance(name: 'webserver') do
   3   it { should be_running }
   4   its('image_id') { should eq 'ami-0fdf8b5989f22a4e0'}

@@ -140,7 +140,13 @@ subnet_public_id = "subnet-0b5a2d782776a7df8"
 vpc_id = "vpc-07fb934f7ee378703"
 ```
 
-### Step 04: Create the InSpec profile
+### Step 04: Create the InSpec profile and do the following checks
+- EC2 instances running
+- verify each instance's AMI ID, instance size and IP address
+- check your VPC settings
+- verify the subnet
+- verify whether each instance specifies the required security groups
+
 ```bash
 # 4.1 Create the inspec profile named "aws-security" and remove the default controls/example.rb 
 # create a new control file named controls/instances.rb

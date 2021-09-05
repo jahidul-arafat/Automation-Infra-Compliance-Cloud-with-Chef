@@ -115,7 +115,6 @@
 - [ ] Immediately after the actions.
 - [x] You can list them anywhere within the resource block.
 
-
 ### Q24.True or False: InSpec uses resources to verify cloud infrastructure
 - [x] True
 - [ ] False
@@ -131,3 +130,23 @@
 - [ ] Profile attributes.
 - [ ] Profile files.
 - [x] All of the above.
+
+### Q27. A Habitat package is:
+These are what we created by running build within the Habitat Studio.
+- [ ] a Docker image
+- [x] a .hart file
+- [ ] A .tar file
+- [ ] A Plan.sh file
+
+### Q28. The `hab studio enter` command:
+- [ ] opens a text editor
+- [ ] builds the Habitat package and then exits
+- [x] Creates a "clean room" environment for building and testing packages
+- [ ] explodes the Studio package for viewing
+
+### Q29. In the Studio environment (the "clean room") the curl command was originally unavailable. We installed this package using the `hab pkg install -b` command. Where was the package obtained from?
+You'll recall the -b option was to bin-link the installed package, making it available directly from the command-line.
+- [ ] the $HAB_ORIGIN you exported during setup
+- [ ] the habitat/ origin
+- [x] the core/ origin
+- [ ] We built this package from scratch by running build

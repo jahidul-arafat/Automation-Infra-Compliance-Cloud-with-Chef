@@ -39,6 +39,7 @@ f23734e666d9   dokken                  bridge    local
 ![](images/docker-ps.png)
 ```bash
 # 2.4 Inspect the docker network <habquickstart> to verify web-01, web-02 and haproxy::loadbalancer
+> docker network inspect habquickstart_default
 ```
 ![](images/docker-network.png)
 
@@ -49,7 +50,7 @@ f23734e666d9   dokken                  bridge    local
 
 # Step 03: Build another webserver (web-03) and add this to the load balancer and check how the remour protocol works
 ```bash
-# 3.1 Check the excisitng hproxy configuration file in loadbalancer
+# 3.1 Check the existing haproxy configuration file in loadbalancer
 > docker exec habquickstart_load-balancer_1 cat /hab/svc/haproxy/config/haproxy.conf
 ---
 global

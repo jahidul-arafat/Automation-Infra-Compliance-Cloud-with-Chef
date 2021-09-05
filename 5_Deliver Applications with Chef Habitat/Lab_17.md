@@ -89,7 +89,7 @@ backend default                             # Here we see, 2x servers are listed
 ```
 ![](images/web-3.png)
 ```bash
-> docker network inspect 
+> docker network inspect habquickstart_default
 ```
 ![](images/network_web3.png)
 ```bash

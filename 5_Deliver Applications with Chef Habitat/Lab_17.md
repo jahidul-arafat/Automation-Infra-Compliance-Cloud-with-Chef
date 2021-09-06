@@ -48,7 +48,7 @@ f23734e666d9   dokken                  bridge    local
 ```
 ![](images/haproxy-result.png)
 
-# Step 03: Build another webserver (web-03) and add this to the load balancer and check how the remour protocol works
+# Step 03: Build another webserver (web-03) and add this to the load balancer and check how the rumour protocol works
 ```bash
 # 3.1 Check the existing haproxy configuration file in loadbalancer
 > docker exec habquickstart_load-balancer_1 cat /hab/svc/haproxy/config/haproxy.conf

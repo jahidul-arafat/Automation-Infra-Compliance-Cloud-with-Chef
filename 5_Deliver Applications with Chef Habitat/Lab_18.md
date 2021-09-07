@@ -149,10 +149,46 @@ total 1576
 ```
 ![](images/hab_packages_hart.png)
 
-### Step 07: Load the installed package as habitat service inside the cleanroom
+### Step 07: Load the installed package as habitat service inside the cleanroom and later export it in docker
 ```bash
 # 7.1 Load the service at cleanroom
 > [2][default:/src:1]# hab svc load $HAB_ORIGIN/meme-machine --force # --force option for reload
+
+# 7.2 Test whether the service is running in localhost:8000
+[2][default:/src:130]# wget -q0- localhost:8000
 ```
+![](images/localhost_meme_8000.png)
+```bash
+# 7.3 Check the supervisor log
+> [3][default:/src:0]# sup-log
+--> Tailing the Habitat Supervisor's output (use 'Ctrl+c' to stop)
+hab-sup(MR): Starting ctl-gateway on 127.0.0.1:9632
+hab-sup(MR): Starting http-gateway on 0.0.0.0:9631
+meme-machine.default(SR): Initializing
+meme-machine.default(SV): Starting service as user=hab, group=hab
+meme-machine.default(O): [2021-09-07 06:02:50] INFO  WEBrick 1.4.2
+meme-machine.default(O): [2021-09-07 06:02:50] INFO  ruby 2.5.7 (2019-10-01) [x86_64-linux]
+meme-machine.default(O): [2021-09-07 06:02:50] INFO  WEBrick::HTTPServer#start: pid=4610 port=8000
+
+# 7.4 Export the Package (.HART) file in docker from cleanroom
+
+> [4][default:/src:0]# source results/last_build.env 
+> [5][default:/src:0]# hab pkg export docker results/$pkg_artifact
+
+# 7.5 Exit from Cleanroom and check whether the docker images are built
+> docker images|grep $HAB_ORIGIN
+lab_hab_originkey/meme-machine      0.1.0                  76341b861b63   About a minute ago   350MB
+lab_hab_originkey/meme-machine      0.1.0-20210906105601   76341b861b63   About a minute ago   350MB
+lab_hab_originkey/meme-machine      latest                 76341b861b63   About a minute ago   350MB
+
+# 7.6 Docker run the image in localhost port 8000 mapping to docker port 8000
+# environment variable: HAB_LICENSE = accept-no-persist
+# port 8000:8000
+# The --env flag passes in an environment variable to temporarily accept the habitat EULA
+> docker run --env HAB_LICENSE=accept-no-persist -p 8000:8000 $HAB_ORIGIN/meme-machine
+
+```
+### What's Next: You will see a failure if you try to upload the .jpeg image.
+That's because the **core/imagemagick** package is not compiled with JPEG support. 
 
 

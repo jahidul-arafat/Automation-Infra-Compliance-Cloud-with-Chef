@@ -150,3 +150,26 @@ You'll recall the -b option was to bin-link the installed package, making it ava
 - [ ] the habitat/ origin
 - [x] the core/ origin
 - [ ] We built this package from scratch by running build
+
+### Q30. What is the purpose of Scaffolding?
+*** Scaffolding can only deals with Explicit dependencies, not the implicit dependencies.
+- [ ] It automatically builds and deploys your application.
+- [x] To generate a Plan file for building common application types.
+- [ ] To support exporting built packages to Docker images.
+- [ ] It automatically bundles all the implicit dependencies for Ruby applications.
+
+### Q31. How can a package dependency be specified in a Plan file?
+You'll remember defining the ImageMagick dependendency using this setting.
+
+- [x] pkg_deps
+- [ ] pkg_build_deps
+- [ ] pkg_runtime_deps
+- [ ] Scaffolding always grabs every dependency you need
+
+### Q32. As a clean room environment, the Habitat Studio:
+Select all answers that apply
+- [x] Doesn't load any tools or libraries from outside the environment.
+- [ ] Loads any shortcuts defined in your Bash or Powershell profile.
+- [x] Ensures that the Habitat Supervisor can run your package in any environment.
+- [x] Ensures that nothing external is pulled into your package.
+

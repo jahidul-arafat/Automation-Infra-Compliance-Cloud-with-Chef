@@ -173,3 +173,50 @@ Select all answers that apply
 - [x] Ensures that the Habitat Supervisor can run your package in any environment.
 - [x] Ensures that nothing external is pulled into your package.
 
+### Q33. Where can Habitat packages be uploaded, stored and shared?
+- [ ] GitHub
+- [x] Builder
+- [ ] The Chef Supermarket
+- [ ] Using package managers like yum or rpm
+
+### Q34. The core Builder origin:
+Check all that apply
+
+- [ ] Only includes build tools, like curl
+- [x] Is a set of foundation packages
+- [x] Is managed and versioned by the Habitat maintainers
+- [ ] Provides packages that cover every use-case
+
+### Q35. True or False: A successful build in the Studio installs the package in the cleanroom for you.
+- [x] True
+- [ ] False
+
+### Q36. How can you search for a specific file within packages installed inside the Studio?
+- [ ] The hab pkg search command
+- [x] The hab pkg provides command
+- [ ] Examining the package manifest in Builder
+- [ ] Running hab pkg export and opening the artifact with an editor
+
+### Q37. Where does Habitat retrieve dependencies from?
+- [ ] The channel that contains the newest version of a package.
+- [ ] From the channel specified in the Plan file
+- [ ] From the channel marked latest
+- [x] From the stable channel
+
+### Q38. What language does Chef Compliance use to provide a common language for security stakeholders to collaborate?
+- [ ] ServerSpec
+- [ ] Inspector
+- [x] InSpec
+- [ ] CIS
+
+### Q39. Where are Compliance profiles customized and turned into consumable packages?
+- [ ] The Habitat Workspace
+- [x] The Habitat Studio
+- [ ] The Automate Compliance Dashboard
+- [ ] Chef Habitat Builder
+
+### Q40. What can be added to a control in order to ignore a scan, permanently or for a specific time period?
+- [ ] Exceptions
+- [ ] Justifications
+- [x] Overlays
+- [x] Waivers

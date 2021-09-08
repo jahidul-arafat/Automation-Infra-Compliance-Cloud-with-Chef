@@ -1,0 +1,134 @@
+$token_script = <<-SCRIPT
+cat > data-collector-token.toml <<EOF
+[auth_n.v1.sys.service]
+a1_data_collector_token = "KGN0YhXlXhQwhFxTnXLTPhfObKs="
+EOF
+./chef-automate config patch data-collector-token.toml
+SCRIPT
+
+$mlsa_script = <<-SCRIPT
+if [ "$RESPONSE" == "yes" ]
+then
+  ARGS='--accept-terms-and-mlsa'
+else
+  echo "You must say 'yes' to continue"
+  exit 1
+fi
+sudo ./chef-automate deploy $ARGS
+SCRIPT
+
+$supervisor_script = <<SCRIPT
+cat > /etc/systemd/system/hab-sup.service <<EOF
+[Unit]
+Description=The Chef Habitat Supervisor
+
+[Service]
+ExecStart=/bin/hab sup run
+
+[Install]
+WantedBy=default.target
+EOF
+SCRIPT
+
+$compliance_report_script = <<SCRIPT
+cat > /hab/user/linux-cis-sample/config/user.toml <<EOF
+# You must accept the Chef License to use this software: https://www.chef.io/end-user-license-agreement/
+# Accepting the MSLA during vagrant provisioning assumes you accept the Chef EULA.
+
+interval = 10
+splay = 10
+splay_first_run = 0
+log_level = 'warn'
+report_to_stdout = true
+
+[chef_license]
+acceptance = "accept-no-persist"
+
+[automate]
+enable = true
+server_url = "https://chef-automate.test"
+token = "KGN0YhXlXhQwhFxTnXLTPhfObKs="
+user = "centos"
+EOF
+SCRIPT
+
+class MLSA
+    def to_s
+        print "I agree to the Terms of Service and the Master License and Services Agreement (yes/no): \n"
+        STDIN.gets.chomp
+    end
+end
+
+Vagrant.configure(2) do |config|
+
+  config.vm.define 'centos' do |n|
+    n.vm.provider "hyperv"
+    n.vm.provider "virtualbox"
+    n.vm.synced_folder ".", "/vagrant", disabled: true
+    n.vm.box = 'bento/centos-7'
+    n.vm.box_url = 'https://vagrantcloud.com/bento/boxes/centos-7'
+    n.vm.box_version = '201812.27.0'
+    n.vm.hostname = 'centos-node'
+    n.vm.provision "shell", inline: "echo 'Preparing Centos node...'"
+    n.vm.provision "shell", inline: "echo 192.168.33.199 chef-automate.test | sudo tee -a /etc/hosts"
+    n.vm.provision "shell", inline: "yum install -y vim-enhanced emacs nano"
+    n.vm.provision "shell", inline: "echo 'Installing Chef Habitat Supervisor...'"
+    n.vm.provision "shell", inline: "curl https://raw.githubusercontent.com/habitat-sh/habitat/master/components/hab/install.sh | sudo bash -s -- -v 1.6.0"
+    n.vm.provision "shell", inline: "groupadd hab"
+    n.vm.provision "shell", inline: "useradd -g hab hab"
+    n.vm.provision "shell", inline: $supervisor_script
+    n.vm.provision "shell", inline: "mkdir -p /hab/user/linux-cis-sample/config"
+    n.vm.provision "shell", inline: $compliance_report_script
+  end
+
+  config.vm.define 'automate' do |n|
+  
+    n.vm.provider "hyperv" do |v|
+      v.memory = 4096
+      v.cpus = 4
+    end
+    
+    n.vm.provider "virtualbox" do |v|
+      v.memory = 4096
+      v.cpus = 4
+    end
+
+    n.vm.box = "bento/ubuntu-16.04"
+    n.vm.synced_folder ".", "/opt/a2-testing", disabled: true
+    n.vm.hostname = 'chef-automate.test'
+    n.vm.network 'private_network', ip: '192.168.33.199'
+    n.vm.provision "shell", inline: "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y unzip"
+    n.vm.provision "shell", inline: "sysctl -w vm.max_map_count=262144"
+    n.vm.provision "shell", inline: "sysctl -w vm.dirty_expire_centisecs=20000"
+    n.vm.provision "shell", inline: "echo 192.168.33.199 chef-automate.test | sudo tee -a /etc/hosts"
+    n.vm.provision "shell", inline: "curl -s https://packages.chef.io/files/current/automate/latest/chef-automate_linux_amd64.zip | gunzip - > chef-automate && chmod +x chef-automate"
+    n.vm.provision "shell", env: {"RESPONSE" => MLSA.new}, inline: $mlsa_script
+    n.vm.provision "shell", inline: $token_script
+    n.vm.provision "shell", inline: "apt-get update"
+    n.vm.provision "shell", inline: "apt-get clean"
+    n.vm.provision "shell", inline: "echo 'Server is up. Please log in at https://chef-automate.test/'"
+    n.vm.provision "shell", inline: "echo 'credentials are in the automate-credentials.toml file. log in using vagrant ssh'"
+
+    if Vagrant::Util::Platform.windows?
+      n.trigger.after [:up] do |trigger|
+        trigger.info = "Adding '192.168.33.199 chef-automate.test' to C:\\Windows\\System32\\drivers\\etc\\hosts... this entry is automatically removed when machines are destroyed. If using hyper-v you need to modify the ipaddress manually to match the output of running 'hostname -I' after logging in with 'vagrant ssh automate'. You will then need to update this entry in /etc/hosts on both the automate and centos instances."
+        trigger.run = {inline: "Add-Content C:\\Windows\\System32\\drivers\\etc\\hosts '192.168.33.199 chef-automate.test'"}
+      end
+      n.trigger.after [:destroy] do |trigger|
+        trigger.info = 'Removing chef-automate.test entry from C:\Windows\System32\drivers\etc\hosts'
+        trigger.run = {inline: "Set-Content -Path \"C:\\Windows\\System32\\drivers\\etc\\hosts\" -Value (Get-Content -Path \"C:\\Windows\\System32\\drivers\\etc\\hosts\" | Select-String -Pattern ' chef-automate.test' -NotMatch)"}
+      end
+    else
+      n.trigger.after [:up] do |trigger|
+        trigger.info = "Adding '192.168.33.199 chef-automate.test' to /etc/hosts file... this entry is removed when machines are destroyed. Please enter password or ctrl+c and create entry manually."
+        trigger.run = {inline: "bash -c \"echo '192.168.33.199 chef-automate.test' | sudo tee -a /etc/hosts\""}
+      end
+      n.trigger.after [:destroy] do |trigger|
+        trigger.info = "Removing chef-automate.test from /etc/hosts, please enter password or ctrl+c and remove entry manually."
+        trigger.run = {inline: "bash -c 'sudo sed -i \"\" \"/chef-automate.test/d\" /etc/hosts'"}
+      end
+    end
+
+  end
+
+end

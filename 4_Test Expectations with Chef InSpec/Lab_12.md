@@ -1,4 +1,4 @@
-# Lab 12: Scan the Cloud Infrastructure to validate that configuration and installed software meet your complianceand security requirements.
+# Lab 12: Scan the Cloud Infrastructure to validate that configuration and installed software meet your compliance and security requirements.
 - InSpec can also test specific cloud provider assets i.e. AWS IAM roles, security groups and other AWS resources.
 
 Objective:

@@ -2,7 +2,7 @@
 ## 1. Chef: Journey Begins
 #### Lab 01: Start Your Automation Journey
 
-## 3. Learn the CHef Infra Language
+## 3. Learn the Chef Infra Language
 #### Lab 02: Learn Chef Infra:: Prepare a cookbook to deploy two Test instances ( 1X Ubutnu 18.04 and 1X Centos-8) using Kitchen.yml and converging the changes into these in a agile process
 #### Lab 03: Create a basic Chef repo and try to understand its architecture
 #### Lab 04: Demonstrating a Hardening Cookbook

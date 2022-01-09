@@ -1,4 +1,4 @@
-# Chef-Principle-Analyst-Exam-Prep
+# Automation With Chef
 ## 1. Chef: Journey Begins
 #### Lab 01: Start Your Automation Journey
 
